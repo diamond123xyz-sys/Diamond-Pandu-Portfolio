@@ -93,8 +93,6 @@
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
         }
 
         .project-thumbnail:hover {
@@ -210,24 +208,42 @@
 
             <div class="project-content">
                 <div class="project-gallery">
-                    <a href="case-study-indigo.html" class="project-thumbnail">
-                        <div class="thumbnail-img-wrapper">
+                    <div class="project-thumbnail">
+                        <a href="case-study-indigo.html" class="thumbnail-img-wrapper" style="display: block;">
                             <img src="../assets/vinix7/indigo.png" alt="Indigo Project">
-                        </div>
+                        </a>
                         <div class="thumbnail-info">
-                            <h3>Indigo by Telkom - AI Synergy & Risk Engine</h3>
-                            <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
+                            <a href="case-study-indigo.html" style="text-decoration: none;">
+                                <h3>Indigo by Telkom - AI Synergy & Risk Engine</h3>
+                            </a>
+                            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+                                <a href="case-study-indigo.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+                                    Lihat Detail <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://indigo-connect-ai-synergy-risk-engi.vercel.app/" target="_blank" class="btn-primary-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+                                    Lihat Website <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
                         </div>
-                    </a>
-                    <a href="case-study-minton.html" class="project-thumbnail">
-                        <div class="thumbnail-img-wrapper">
+                    </div>
+                    <div class="project-thumbnail">
+                        <a href="case-study-minton.html" class="thumbnail-img-wrapper" style="display: block;">
                             <img src="../assets/vinix7/minton.png" alt="Minton Project">
-                        </div>
+                        </a>
                         <div class="thumbnail-info">
-                            <h3>Minton - Badminton Ecosystem Website</h3>
-                            <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
+                            <a href="case-study-minton.html" style="text-decoration: none;">
+                                <h3>Minton - Badminton Ecosystem Website</h3>
+                            </a>
+                            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+                                <a href="case-study-minton.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+                                    Lihat Detail <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://diamond123xyz-sys.github.io/Minton-Website/frontend/index.html" target="_blank" class="btn-primary-outline" style="padding: 0.6rem 1.2rem; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+                                    Lihat Website <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="project-description">
