@@ -90,9 +90,8 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             background: var(--bg-tertiary);
-            aspect-ratio: 16 / 9;
-            display: block;
-            position: relative;
+            display: flex;
+            flex-direction: column;
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
@@ -104,40 +103,39 @@
             border-color: var(--accent-primary);
         }
 
-        .project-thumbnail img {
+        .thumbnail-img-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+
+        .thumbnail-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .project-thumbnail:hover img {
+        .project-thumbnail:hover .thumbnail-img-wrapper img {
             transform: scale(1.05);
         }
 
-        .thumbnail-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
+        .thumbnail-info {
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            z-index: 2;
         }
 
-        .thumbnail-overlay h3 {
-            color: #ffffff;
+        .thumbnail-info h3 {
+            color: var(--text-primary);
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
         }
         
-        .thumbnail-overlay span {
-            color: rgba(255, 255, 255, 0.8);
+        .thumbnail-info span {
+            color: var(--text-secondary);
             font-size: 0.9rem;
             font-weight: 500;
             display: flex;
@@ -146,7 +144,7 @@
             transition: color 0.3s ease;
         }
 
-        .project-thumbnail:hover .thumbnail-overlay span {
+        .project-thumbnail:hover .thumbnail-info span {
             color: var(--accent-primary);
         }
 
@@ -213,15 +211,19 @@
             <div class="project-content">
                 <div class="project-gallery">
                     <a href="#project-indigo" class="project-thumbnail">
-                        <img src="../assets/vinix7/indigo.png" alt="Indigo Project">
-                        <div class="thumbnail-overlay">
+                        <div class="thumbnail-img-wrapper">
+                            <img src="../assets/vinix7/indigo.png" alt="Indigo Project">
+                        </div>
+                        <div class="thumbnail-info">
                             <h3>Project Indigo</h3>
                             <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
                     <a href="#project-minton" class="project-thumbnail">
-                        <img src="../assets/vinix7/minton.png" alt="Minton Project">
-                        <div class="thumbnail-overlay">
+                        <div class="thumbnail-img-wrapper">
+                            <img src="../assets/vinix7/minton.png" alt="Minton Project">
+                        </div>
+                        <div class="thumbnail-info">
                             <h3>Project Minton</h3>
                             <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
                         </div>
