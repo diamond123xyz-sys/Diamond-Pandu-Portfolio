@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT VINIX Seven Aurum Portfolio | Digital Transformation Designer</title>
+    <title>Indigo by Telkom Case Study | Digital Transformation Designer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -77,75 +77,20 @@
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        .project-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .project-thumbnail {
+        .project-image-full {
+            width: 100%;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             background: var(--bg-tertiary);
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
         }
 
-        .project-thumbnail:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent-primary);
-        }
-
-        .thumbnail-img-wrapper {
+        .project-image-full img {
             width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-        }
-
-        .thumbnail-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .project-thumbnail:hover .thumbnail-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .thumbnail-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .thumbnail-info h3 {
-            color: var(--text-primary);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-        }
-        
-        .thumbnail-info span {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .project-thumbnail:hover .thumbnail-info span {
-            color: var(--accent-primary);
+            display: block;
         }
 
         .tech-tags {
@@ -164,10 +109,6 @@
         }
 
         @media (max-width: 992px) {
-            .project-gallery {
-                grid-template-columns: 1fr;
-            }
-
             .project-title {
                 font-size: 2.5rem;
             }
@@ -179,74 +120,57 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <a href="portfolio-vinix.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali ke Vinix</a>
         </div>
     </nav>
 
     <section class="portfolio-detail section-padding">
         <div class="container">
             <div class="project-hero">
-                <div class="project-badge">UI/UX & Front-End Development</div>
-                <h1 class="project-title">Transformasi Digital Antarmuka Web PT VINIX</h1>
+                <div class="project-badge">UI/UX Design Case Study</div>
+                <h1 class="project-title">Indigo by Telkom - AI Synergy & Risk Engine</h1>
                 <div class="project-meta-grid">
                     <div class="meta-item">
                         <h4>Klien / Perusahaan</h4>
-                        <p>PT VINIX Seven Aurum</p>
+                        <p>Telkom Indonesia (via VINIX)</p>
                     </div>
                     <div class="meta-item">
                         <h4>Peran</h4>
-                        <p>Front-End Developer & UI/UX Designer</p>
+                        <p>UI/UX Designer</p>
                     </div>
                     <div class="meta-item">
-                        <h4>Durasi</h4>
-                        <p>Februari 2026 – Juli 2026</p>
+                        <h4>Fokus</h4>
+                        <p>AI Synergy & Risk Management</p>
                     </div>
                     <div class="meta-item">
                         <h4>Kategori</h4>
-                        <p>Web Application</p>
+                        <p>Web Platform</p>
                     </div>
                 </div>
             </div>
 
             <div class="project-content">
-                <div class="project-gallery">
-                    <a href="case-study-indigo.html" class="project-thumbnail">
-                        <div class="thumbnail-img-wrapper">
-                            <img src="../assets/vinix7/indigo.png" alt="Indigo Project">
-                        </div>
-                        <div class="thumbnail-info">
-                            <h3>Indigo by Telkom - AI Synergy & Risk Engine</h3>
-                            <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="case-study-minton.html" class="project-thumbnail">
-                        <div class="thumbnail-img-wrapper">
-                            <img src="../assets/vinix7/minton.png" alt="Minton Project">
-                        </div>
-                        <div class="thumbnail-info">
-                            <h3>Minton - Badminton Ecosystem Website</h3>
-                            <span>Lihat Detail <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </a>
+                <div class="project-image-full">
+                    <img src="../assets/vinix7/indigo.png" alt="Indigo Project Design">
                 </div>
 
                 <div class="project-description">
                     <h2>Ikhtisar Proyek</h2>
-                    <p>Dalam peran saya di PT VINIX, saya bertanggung jawab untuk memimpin proses perancangan ulang antarmuka digital perusahaan. Fokus utama adalah meningkatkan keterlibatan pengguna melalui desain yang lebih intuitif dan performa front-end yang optimal.</p>
+                    <p>Proyek Indigo by Telkom ini berfokus pada pengembangan sistem AI Synergy & Risk Engine yang canggih. Sebagai bagian dari tim desain, tujuan utamanya adalah merancang antarmuka yang mampu menyajikan data kompleks mengenai manajemen risiko dan sinergi kecerdasan buatan menjadi dasbor yang intuitif, informatif, dan mudah digunakan oleh para pemangku kepentingan.</p>
                     
                     <h3>Tantangan Desain</h3>
-                    <p>Menghadapi struktur data bisnis yang kompleks, tantangan utamanya adalah menyederhanakan alur navigasi tanpa menghilangkan fungsionalitas kritis. Saya menerapkan metodologi design thinking untuk mengidentifikasi titik hambat pengguna.</p>
+                    <p>Mengelola densitas data analitik yang tinggi tanpa mengorbankan kejernihan visual (visual clarity). Diperlukan arsitektur informasi yang solid agar metrik risiko utama dapat segera dipahami sekilas (glanceable), sambil tetap memberikan kedalaman informasi bagi pengguna yang ingin menggali data lebih dalam.</p>
 
-                    <h3>Hasil & Dampak</h3>
-                    <p>Hasil akhir adalah produk web yang sepenuhnya responsif, interaktif, dan selaras dengan visi strategis bisnis perusahaan. Peningkatan kecepatan muat halaman dan kepuasan pengguna yang terukur melalui sesi pengujian iteratif.</p>
+                    <h3>Solusi & Pendekatan</h3>
+                    <p>Menerapkan pendekatan desain dashboard modular dengan hierarki visual yang kuat. Menggunakan palet warna yang memiliki kontras tepat untuk menunjukkan status risiko (misalnya merah untuk risiko tinggi, hijau untuk stabil). Proses pengujian iteratif dilakukan untuk memastikan navigasi dan visualisasi data yang *user-friendly*.</p>
 
                     <h3>Teknologi yang Digunakan</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag">HTML5 / CSS3</span>
-                        <span class="tech-tag">JavaScript (ES6+)</span>
                         <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">Design System</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Prototyping</span>
+                        <span class="tech-tag">User Testing</span>
                     </div>
                 </div>
             </div>
