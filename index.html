@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Visual Communication & Digital Transformation Designer</title>
+    <meta name="description"
+        content="Portfolio of a Visual Communication & Digital Transformation Designer focused on delivering value for enterprises and BUMN.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Portfo<span>lio.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="#experience" data-i18n="nav-experience">Pengalaman</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">Keahlian & Edukasi</a></li>
+                <li><a href="#achievements" data-i18n="nav-achievements">Pencapaian</a></li>
+                <li><a href="#contact" class="btn-primary-outline" data-i18n="nav-contact">Hubungi Saya</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div id="lang-switch" class="lang-switch">
+                    <span id="lang-id" class="active">ID</span>
+                    <span class="lang-divider">|</span>
+                    <span id="lang-en">EN</span>
+                </div>
+                <div id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge" data-i18n="hero-badge">Siap untuk Peluang Karir Baru</div>
+                <h1 class="hero-title" data-i18n="hero-title">Paduan <span>Estetika</span> & <br>Inovasi
+                    <span>Digital.</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">Saya adalah seorang <strong>Visual Communication &
+                        Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End
+                    Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk
+                    berbagai institusi besar termasuk BUMN dan Kementerian</p>
+                <div class="hero-actions">
+                    <a href="#experience" class="btn-primary" data-i18n="hero-btn-exp">Lihat Pengalaman <i
+                            class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary" data-i18n="hero-btn-cv">Unduh CV <i
+                            class="fas fa-download"></i></a>
+                </div>
+                <div class="trust-indicators">
+                    <p data-i18n="hero-trust">Berpengalaman memberikan dampak positif di:</p>
+                    <div class="logos-placeholder">
+                        <div class="trust-logo-wrapper">
+                            <img src="assets/img/PT Kilang Pertamina Internasional.svg" alt="Pertamina"
+                                class="trust-logo logo-light">
+                            <img src="assets/img/PT Kilang Pertamina Internasional Putih.png" alt="Pertamina"
+                                class="trust-logo logo-dark">
+                        </div>
+                        <span class="dot">•</span>
+                        <div class="trust-logo-wrapper">
+                            <img src="assets/img/vinix.png" alt="VINIX" class="trust-logo logo-light vinix-logo">
+                            <img src="assets/img/vinix.png" alt="VINIX" class="trust-logo logo-dark vinix-logo">
+                        </div>
+                        <span class="dot">•</span>
+                        <div class="trust-logo-wrapper">
+                            <img src="assets/img/Logo Kemendikbud.png" alt="Kementerian" class="trust-logo logo-light">
+                            <img src="assets/img/bskap putih.png" alt="Kementerian" class="trust-logo logo-dark">
+                        </div>
+                        <span class="dot">•</span>
+                        <div class="trust-logo-wrapper">
+                            <img src="assets/img/bulog.png" alt="BUMN" class="trust-logo logo-light">
+                            <img src="assets/img/BULOG Putih-8 1.png" alt="BUMN" class="trust-logo logo-dark">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-profile-container">
+                    <div class="profile-img-wrapper">
+                        <img src="assets/img/Foto Diri.png" alt="Profile Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Interactive List) -->
+    <section id="experience" class="experience section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="exp-header-title">Pengalaman <span>Profesional</span></h2>
+                <p data-i18n="exp-header-subtitle">Rekam jejak karir yang berfokus pada transformasi digital dan
+                    komunikasi visual strategis.</p>
+            </div>
+
+            <div class="exp-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="digital">Digital Transformation</button>
+                <button class="filter-btn" data-filter="visual">Visual Communication</button>
+            </div>
+            <div class="experience-list">
+                <!-- Exp 1 -->
+                <div class="exp-item glass-effect" data-category="digital">
+                    <div class="exp-summary">
+                        <div class="company-logo">
+                            <img src="assets/img/vinix.png" alt="PT VINIX Seven Aurum Logo"
+                                class="logo-light vinix-logo">
+                            <img src="assets/img/vinix.png" alt="PT VINIX Seven Aurum Logo"
+                                class="logo-dark vinix-logo">
+                        </div>
+                        <div class="exp-info">
+                            <h3 data-i18n="exp-1-role">Front-End Web Developer & UI/UX Designer (Internship)</h3>
+                            <div class="exp-meta">
+                                <span class="company-name">PT VINIX Seven Aurum</span>
+                                <span class="dot">•</span>
+                                <span class="timeline-date" data-i18n="exp-1-date">Februari 2026 – Juli 2026</span>
+                                <span class="dot">•</span>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
+                                        data-i18n="exp-1-location">Jakarta, Indonesia</span></span>
+                            </div>
+                        </div>
+                        <div class="exp-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <div class="details-inner">
+                            <ul>
+                                <li data-i18n="exp-1-bullet-1">Menerapkan metodologi <em>design thinking</em> melalui
+                                    tahapan riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em>,
+                                    dan
+                                    pengujian iteratif untuk memastikan setiap antarmuka digital selaras dengan
+                                    kebutuhan
+                                    fungsional pengguna dan tujuan strategis bisnis.</li>
+                                <li data-i18n="exp-1-bullet-2"><strong>Mengembangkan dan menstrukturisasi antarmuka web
+                                        (Front-End) secara presisi menggunakan HTML, CSS, dan JavaScript, menjembatani
+                                        hasil
+                                        rancangan UI/UX ke dalam produk web yang fungsional, interaktif, responsif, dan
+                                        siap
+                                        rilis.</strong></li>
+                            </ul>
+                            <a href="pages/portfolio-vinix.html" class="btn-portfolio"
+                                data-i18n="exp-btn-portfolio">Lihat
+                                Portofolio <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="exp-item glass-effect" data-category="visual">
+                    <div class="exp-summary">
+                        <div class="company-logo">
+                            <img src="assets/img/pertamina geothermal putih.png"
+                                alt="PT Pertamina Geothermal Energy Logo" class="logo-light"
+                                style="filter: brightness(0.2);">
+                            <img src="assets/img/pertamina geothermal putih.png"
+                                alt="PT Pertamina Geothermal Energy Logo" class="logo-dark">
+                        </div>
+                        <div class="exp-info">
+                            <h3 data-i18n="exp-2-role">Graphic Designer (Remote Freelance Project)</h3>
+                            <div class="exp-meta">
+                                <span class="company-name">PT Pertamina Geothermal Energy Tbk (Via Yosae Karya
+                                    Indonesia)</span>
+                                <span class="dot">•</span>
+                                <span class="timeline-date" data-i18n="exp-2-date">Desember 2025 – Januari 2026</span>
+                                <span class="dot">•</span>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
+                                        data-i18n="exp-2-location">Sulawesi Utara (Remote)</span></span>
+                            </div>
+                        </div>
+                        <div class="exp-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <div class="details-inner">
+                            <ul>
+                                <li data-i18n="exp-2-bullet-1">Penanggung jawab Project Desain Presentasi PROPER PT
+                                    Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja pengelolaan
+                                    lingkungan hidup oleh Kementerian Lingkungan Hidup dan Kehutanan (40+ desain).</li>
+                                <li data-i18n="exp-2-bullet-2">Berhasil mengolah data kinerja lingkungan dan sosial yang
+                                    kompleks menjadi visual yang komunikatif dan profesional guna mendukung target
+                                    perusahaan meraih predikat PROPER EMAS.</li>
+                            </ul>
+                            <a href="pages/portfolio-pertamina-geothermal.html" class="btn-portfolio"
+                                data-i18n="exp-btn-portfolio">Lihat Portofolio <i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="exp-item glass-effect" data-category="visual">
+                    <div class="exp-summary">
+                        <div class="company-logo">
+                            <img src="assets/img/PT Kilang Pertamina Internasional.svg"
+                                alt="PT Kilang Pertamina Internasional Logo" class="logo-light">
+                            <img src="assets/img/PT Kilang Pertamina Internasional Putih.png"
+                                alt="PT Kilang Pertamina Internasional Logo" class="logo-dark">
+                        </div>
+                        <div class="exp-info">
+                            <h3 data-i18n="exp-3-role">Graphic Designer (Hybrid Contract Worker)</h3>
+                            <div class="exp-meta">
+                                <span class="company-name">PT Kilang Pertamina Internasional</span>
+                                <span class="dot">•</span>
+                                <span class="timeline-date" data-i18n="exp-3-date">November 2025 – Januari 2026</span>
+                                <span class="dot">•</span>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
+                                        data-i18n="exp-3-location">Cilacap, Jawa Tengah</span></span>
+                            </div>
+                        </div>
+                        <div class="exp-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <div class="details-inner">
+                            <ul>
+                                <li data-i18n="exp-3-bullet-1">Penanggung jawab Project Desain Presentasi PROPER PT
+                                    Kilang
+                                    Pertamina Internasional Refinery Unit IV Cilacap untuk penilaian kinerja (40+
+                                    desain).
+                                </li>
+                                <li data-i18n="exp-3-bullet-2">Berhasil mengolah data kinerja lingkungan dan sosial yang
+                                    kompleks menjadi visual yang komunikatif guna mendukung raihan predikat PROPER EMAS.
+                                </li>
+                            </ul>
+                            <a href="pages/portfolio-pertamina-internasional.html" class="btn-portfolio"
+                                data-i18n="exp-btn-portfolio">Lihat Portofolio <i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 4 -->
+                <div class="exp-item glass-effect" data-category="visual">
+                    <div class="exp-summary">
+                        <div class="company-logo">
+                            <img src="assets/img/bulog.png" alt="Perum BULOG Logo" class="logo-light">
+                            <img src="assets/img/BULOG Putih-8 1.png" alt="Perum BULOG Logo" class="logo-dark">
+                        </div>
+                        <div class="exp-info">
+                            <h3 data-i18n="exp-4-role">Multimedia Designer (Magenta BUMN Intern)</h3>
+                            <div class="exp-meta">
+                                <span class="company-name">Perum BULOG</span>
+                                <span class="dot">•</span>
+                                <span class="timeline-date" data-i18n="exp-4-date">Februari 2025 – September 2025</span>
+                                <span class="dot">•</span>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
+                                        data-i18n="exp-4-location">Yogyakarta, Indonesia</span></span>
+                            </div>
+                        </div>
+                        <div class="exp-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <div class="details-inner">
+                            <ul>
+                                <li data-i18n="exp-4-bullet-1">Mendesain aset visual untuk keperluan kampanye digital &
+                                    non-digital sesuai dengan visual guideline perusahaan dan kebutuhan komunikasi
+                                    Bagian
+                                    Marketing Communication dan Hubungan Masyarakat.</li>
+                                <li data-i18n="exp-4-bullet-2">Optimasi visual media cetak dan media sosial Perum Bulog
+                                    Kanwil Yogyakarta.</li>
+                                <li data-i18n="exp-4-bullet-3"><em>Pencapaian: Sertifikat Magenta BUMN dengan Nilai A
+                                        (Sangat Memuaskan).</em></li>
+                            </ul>
+                            <a href="pages/portfolio-bulog.html" class="btn-portfolio"
+                                data-i18n="exp-btn-portfolio">Lihat
+                                Portofolio <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 5 -->
+                <div class="exp-item glass-effect" data-category="visual">
+                    <div class="exp-summary">
+                        <div class="company-logo">
+                            <img src="assets/img/Logo Kemendikbud.png" alt="BSKAP Kemendikbudristek Logo"
+                                class="logo-light">
+                            <img src="assets/img/bskap putih.png" alt="BSKAP Kemendikbudristek Logo" class="logo-dark">
+                        </div>
+                        <div class="exp-info">
+                            <h3 data-i18n="exp-5-role">Graphic Designer & Illustrator (MSIB Batch 7)</h3>
+                            <div class="exp-meta">
+                                <span class="company-name">BSKAP Kemendikbudristek</span>
+                                <span class="dot">•</span>
+                                <span class="timeline-date" data-i18n="exp-5-date">September 2024 – Desember 2024</span>
+                                <span class="dot">•</span>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
+                                        data-i18n="exp-5-location">Jakarta, Indonesia</span></span>
+                            </div>
+                        </div>
+                        <div class="exp-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <div class="details-inner">
+                            <ul>
+                                <li data-i18n="exp-5-bullet-1">Membuat ilustrasi, ikon, dan aset branding untuk Program
+                                    Nasional Pusat Perbukuan.</li>
+                                <li data-i18n="exp-5-bullet-2">Berkolaborasi dengan divisi humas dalam penyusunan desain
+                                    konten sosial media.</li>
+                                <li data-i18n="exp-5-bullet-3">Mendesain Buku Pedoman ZI-WBK | WBBM BSKAP 2024 dan
+                                    Ilustrasi
+                                    Buku Non-Teks Komik Jenjang E untuk Kampanye Anti-Bullying.</li>
+                            </ul>
+                            <a href="pages/portfolio-bskap.html" class="btn-portfolio"
+                                data-i18n="exp-btn-portfolio">Lihat
+                                Portofolio <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education Section -->
+    <section id="skills" class="skills-edu section-padding">
+        <div class="container">
+            <div class="grid-2-cols">
+                <!-- Skills Column -->
+                <div class="skills-column">
+                    <div class="section-header align-left">
+                        <h2 data-i18n="skills-header">Keahlian & <span>Software</span></h2>
+                    </div>
+
+                    <h3 class="subsection-title"><i class="fas fa-laptop-code"></i> <span
+                            data-i18n="hard-skills-title">Hard Skills</span></h3>
+                    <div class="tags-container">
+                        <span class="skill-tag" data-i18n="skill-1">UI/UX Design</span>
+                        <span class="skill-tag" data-i18n="skill-2">Front-End (HTML, CSS, JS)</span>
+                        <span class="skill-tag" data-i18n="skill-3">Logo & Branding Elements</span>
+                        <span class="skill-tag" data-i18n="skill-4">Iconography</span>
+                        <span class="skill-tag" data-i18n="skill-5">Digital Layout</span>
+                        <span class="skill-tag" data-i18n="skill-6">Aset Media Sosial</span>
+                    </div>
+
+                    <h3 class="subsection-title mt-4"><i class="fas fa-brain"></i> <span
+                            data-i18n="soft-skills-title">Soft Skills</span></h3>
+                    <ul class="custom-list">
+                        <li data-i18n="soft-1">Kreativitas Tinggi & Kepekaan Estetika</li>
+                        <li data-i18n="soft-2">Kolaborasi Tim & Komunikasi Proyek</li>
+                        <li data-i18n="soft-3">Kemampuan Adaptasi & Iterasi berdasarkan Feedback</li>
+                    </ul>
+
+                    <h3 class="subsection-title mt-4"><i class="fas fa-tools"></i> <span
+                            data-i18n="software-title">Software Mastery</span></h3>
+                    <div class="software-grid">
+                        <div class="software-item"><i class="fab fa-adobe"></i> Adobe Illustrator (Advanced)</div>
+                        <div class="software-item"><i class="fab fa-adobe"></i> Adobe Photoshop (Advanced)</div>
+                        <div class="software-item"><i class="fab fa-figma"></i> Figma (Intermediate)</div>
+                        <div class="software-item"><i class="fas fa-code"></i> Visual Studio Code</div>
+                        <div class="software-item"><i class="fas fa-video"></i> Premiere Pro & After Effects</div>
+                    </div>
+                </div>
+
+                <!-- Education & Certifications Column -->
+                <div class="edu-column">
+                    <div class="section-header align-left">
+                        <h2 data-i18n="edu-header">Edukasi & <span>Sertifikasi</span></h2>
+                    </div>
+
+                    <div class="edu-card glass-effect mb-4">
+                        <div class="edu-header">
+                            <h3>Institut Seni Indonesia Surakarta</h3>
+                            <span class="gpa" data-i18n="gpa">IPK: 3.69 / 4.00</span>
+                        </div>
+                        <p class="degree" data-i18n="degree">S1 Desain Komunikasi Visual</p>
+                        <p class="edu-date" data-i18n="edu-date">Agustus 2021 – Januari 2026</p>
+                        <ul class="custom-list">
+                            <li data-i18n="edu-bullet-1">Fokus pada desain branding, ilustrasi digital, komunikasi
+                                visual, dan layout digital.</li>
+                            <li data-i18n="edu-bullet-2">Aktif dalam kepanitiaan, proyek desain, dan kompetisi (Juara 3
+                                Nasional PPK ORMAWA).</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-title"><i class="fas fa-certificate"></i> <span
+                            data-i18n="cert-header">Sertifikasi Internasional & Nasional</span></h3>
+                    <ul class="cert-list">
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Adobe Certified Professional</strong>
+                                <span data-i18n="cert-1-desc">Graphic Design and Illustration using Adobe
+                                    Illustrator</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>Google Certified</strong>
+                                <span data-i18n="cert-2-desc">UX Design Professional</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong data-i18n="cert-3-title">Sertifikat Bahasa Asing</strong>
+                                <span data-i18n="cert-3-desc">EFSET (C2 Proficient) | TOEFL ITP (Skor: 543/677)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Exhibitions -->
+    <section id="achievements" class="achievements section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="ach-header-title">Pencapaian & <span>Aktivitas</span></h2>
+                <p data-i18n="ach-header-subtitle">Dedikasi dan apresiasi atas karya serta partisipasi aktif di bidang
+                    desain kreatif.</p>
+            </div>
+
+            <div class="grid-3-cols">
+                <!-- Awards -->
+                <div class="achieve-card glass-effect">
+                    <div class="achieve-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 data-i18n="ach-card-1-title">Penghargaan</h3>
+                    <ul class="custom-list small-text">
+                        <li data-i18n="ach-1"><strong>Juara 1</strong> – Desain Maskot & Branding, BSKAP
+                            Kemendikbudristek (2024)</li>
+                        <li data-i18n="ach-2"><strong>Juara 3 Nasional</strong> – Kategori SDG’s Terkuat, Abdidaya PPK
+                            ORMAWA (2023)</li>
+                        <li data-i18n="ach-3"><strong>Juara 2 Provinsi</strong> – Lomba Mural, Solo Technopark (2022)
+                        </li>
+                        <li data-i18n="ach-4"><strong>Juara 3 Nasional</strong> – Lomba Manga, Mangafest UGM (2021)</li>
+                    </ul>
+                </div>
+
+                <!-- Exhibitions -->
+                <div class="achieve-card glass-effect">
+                    <div class="achieve-icon"><i class="fas fa-palette"></i></div>
+                    <h3 data-i18n="ach-card-2-title">Pameran Karya</h3>
+                    <ul class="custom-list small-text">
+                        <li>Typefest International Typography Exhibition</li>
+                        <li>DKVACT 8 “Genap” Exhibition</li>
+                        <li>ASEAN South East Digital Art Association (ASEDAS) Exhibition</li>
+                    </ul>
+                </div>
+
+                <!-- Training & Organization -->
+                <div class="achieve-card glass-effect">
+                    <div class="achieve-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-i18n="ach-card-3-title">Pelatihan & Organisasi</h3>
+                    <ul class="custom-list small-text">
+                        <li data-i18n="ach-org"><strong>PPK ORMAWA HIMA DKV ISI Surakarta</strong> - Memberikan Workshop
+                            Desain & Digital Marketing (2023)</li>
+                        <li data-i18n="ach-train-1">Bootcamp UI/UX Design Special Skill Indonesia (Predikat “Excellent”)
+                        </li>
+                        <li data-i18n="ach-train-2">Rakamin PBI – UI/UX Designer Nuri</li>
+                        <li data-i18n="ach-train-3">Rakamin PBI – UX Researcher Telkom Digital Amoeba</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container contact-container">
+            <div class="contact-content">
+                <h2 data-i18n="contact-header">Mari ciptakan solusi digital <span>berdampak besar</span> bersama.</h2>
+                <p data-i18n="contact-subtitle">Membutuhkan tenaga profesional di bidang desain komunikasi visual atau
+                    front-end development? Saya siap berdiskusi untuk membawa nilai tambah bagi perusahaan Anda.</p>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>email.anda@domain.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/profil-anda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form-name">Nama Lengkap / Perusahaan</label>
+                        <input type="text" id="name" placeholder="Masukkan nama atau institusi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form-email">Email Profesional</label>
+                        <input type="email" id="email" placeholder="Masukkan alamat email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form-message">Detail Pesan / Penawaran</label>
+                        <textarea id="message" rows="4"
+                            placeholder="Jelaskan kebutuhan desain atau pengembangan web Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100" data-i18n="form-btn">Kirim Pesan <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Portfo<span>lio.</span></a>
+                <p>Visual Communication & Digital Transformation Designer</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

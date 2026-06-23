@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Pertamina Geothermal Energy Portfolio | Digital Transformation Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .portfolio-detail {
+            padding-top: 80px;
+            padding-bottom: 0;
+        }
+
+        .hero-banner {
+            width: 100%;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-overview {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .proper-badge {
+            display: inline-flex;
+            background: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .proper-badge img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .overview-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .presentation-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition-normal);
+            border: 1px solid var(--border-color);
+        }
+
+        .presentation-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 40px var(--accent-glow);
+        }
+
+        .presentation-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            .presentation-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-overview {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="portfolio-page">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
+            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+        </div>
+    </nav>
+
+    <section class="portfolio-detail">
+        <!-- 1. Full Width Hero Banner (No Gap) -->
+        <div class="hero-banner">
+            <img src="../assets/pt pge/hero section.webp" alt="PGE Project Hero Exhibition">
+        </div>
+
+        <!-- 2. Centered Overview & PROPER Logo -->
+        <div class="project-overview">
+            <div class="proper-badge">
+                <img src="../assets/pt pge/Logo_Kementerian_Kehutanan_RI_(2024) 1.png" alt="Kementerian Kehutanan Logo"
+                    style="height: 50px;">
+                <img src="../assets/pt kpi/logo proper.png" alt="PROPER Logo">
+            </div>
+            <p class="overview-text">Dalam proyek pengembangan materi presentasi PROPER untuk PT Pertamina Geothermal
+                Energy Tbk Area Lahendong, saya mengeksplorasi gaya desain yang secara khusus mengadopsi tema inovasi
+                sosial di sektor pertanian berbasis energi hijau. Saya menerapkan palet warna yang dikurasi khusus,
+                yaitu Hijau untuk merepresentasikan ekosistem panas bumi yang ramah lingkungan, Kuning sebagai simbol
+                energi, pertumbuhan, dan optimisme para petani binaan, serta Putih untuk menyampaikan kesan kebersihan
+                dan transparansi data informasi.</p>
+            <p class="overview-text">Pendekatan visual ini bertujuan untuk menjembatani identitas teknologi panas bumi
+                dengan dampak nyata pemberdayaan masyarakat di sekitar area operasional Lahendong. Dengan memadukan
+                infografis teknis agrikultur dan tata letak yang modern, saya berhasil menciptakan narasi visual yang
+                harmonis untuk mempresentasikan kontribusi perusahaan dalam menciptakan kemandirian ekonomi kepada
+                Kementerian Lingkungan Hidup dan Kehutanan Republik Indonesia.</p>
+        </div>
+
+        <!-- 3. Presentation Slides Grid (2 Columns, 8 Slides) -->
+        <div class="presentation-grid">
+            <div class="presentation-item">
+                <img src="../assets/pt pge/1.png" alt="PGE Presentation Slide 1">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/2.png" alt="PGE Presentation Slide 2">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/3.png" alt="PGE Presentation Slide 3">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/4.png" alt="PGE Presentation Slide 4">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/5.png" alt="PGE Presentation Slide 5">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/6.png" alt="PGE Presentation Slide 6">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/7.png" alt="PGE Presentation Slide 7">
+            </div>
+            <div class="presentation-item">
+                <img src="../assets/pt pge/8.png" alt="PGE Presentation Slide 8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects Exploration -->
+    <section class="other-projects">
+        <div class="container">
+            <h2 class="other-projects-title">Explore Other Projects</h2>
+            <div class="other-projects-grid">
+                <!-- KPI -->
+                <a href="portfolio-pertamina-internasional.html" class="other-project-card">
+                    <img src="../assets/pt kpi/hero section.png" alt="KPI" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Visual Communication</span>
+                        <h3>PT Kilang Pertamina Internasional</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- BSKAP -->
+                <a href="portfolio-bskap.html" class="other-project-card">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800"
+                        alt="BSKAP" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Educational Design</span>
+                        <h3>BSKAP Kemendikbudristek</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- VINIX -->
+                <a href="portfolio-vinix.html" class="other-project-card">
+                    <img src="../assets/img/vinix.png" alt="VINIX" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Digital Transformation</span>
+                        <h3>PT VINIX Seven Aurum</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom"
+            style="text-align: center; padding: 2rem 0; background: var(--bg-primary);">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+        if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
+    </script>
+</body>
+
+</html>
