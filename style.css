@@ -824,42 +824,139 @@ span {
     margin-bottom: 1rem;
 }
 
-.cert-list {
+/* New Skills & Education Styles */
+.skill-group-card {
+    padding: 1.8rem;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.skill-group-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .skill-group-card:hover {
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.02);
+}
+
+.software-progress-list {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    margin-top: 1rem;
 }
 
-.cert-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    background: var(--bg-secondary);
-    padding: 1.2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.cert-list i.fa-award {
-    font-size: 1.5rem;
-    color: #fbbf24;
-    /* Gold */
-}
-
-.cert-list div {
+.software-progress-item {
     display: flex;
     flex-direction: column;
+    gap: 0.6rem;
 }
 
-.cert-list strong {
+.software-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.software-info i {
+    color: var(--accent-primary);
+    margin-right: 0.5rem;
+}
+
+.software-info span:last-child {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.cert-card:hover {
+    transform: translateX(5px);
+    border-color: var(--accent-primary);
+}
+
+.cert-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.cert-icon.adobe {
+    background: rgba(255, 0, 0, 0.08);
+    color: #ff0000;
+}
+
+.cert-icon.google {
+    background: rgba(66, 133, 244, 0.08);
+    color: #4285F4;
+}
+
+.cert-icon.language {
+    background: var(--accent-glow);
+    color: var(--accent-primary);
+}
+
+.cert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cert-content strong {
     font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 0.2rem;
 }
 
-.cert-list span {
+.cert-content span {
     font-size: 0.85rem;
     color: var(--text-secondary);
+    line-height: 1.4;
 }
 
 /* Achievements */
@@ -1254,4 +1351,43 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* Bento Box Utilities */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.bento-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 768px) {
+    .bento-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+.bento-card {
+    border-radius: 24px;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+.bento-card-sm {
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+.gradient-orange {
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    color: #fff;
+    border: none;
+}
+.gradient-purple {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border: none;
 }
