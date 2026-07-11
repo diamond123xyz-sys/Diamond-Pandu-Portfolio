@@ -120,7 +120,17 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <div style="display: flex; gap: 1rem; align-items: center;">
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions" style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id" class="active">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
                 <a href="https://diamond123xyz-sys.github.io/Minton-Website/frontend/index.html" target="_blank" class="btn-primary"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
                 <a href="portfolio-vinix.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali ke Vinix</a>
             </div>
@@ -235,6 +245,7 @@
             document.body.setAttribute('data-theme', 'light');
         }
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

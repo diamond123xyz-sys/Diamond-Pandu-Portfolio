@@ -125,7 +125,7 @@ span {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .align-left p {

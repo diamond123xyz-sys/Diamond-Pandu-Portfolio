@@ -24,8 +24,8 @@
         .project-description { max-width: 800px; }
         .project-description h2 { font-size: 2rem; margin-bottom: 1.5rem; }
         .project-description p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .category-section { margin-top: 2rem; }
-        .category-section h3 { font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .category-section { margin-top: 80px; }
+        .category-section h3 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
         .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
         .media-grid-single { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         .media-grid-single .media-item img { aspect-ratio: auto; object-fit: contain; max-height: 75vh; }
@@ -35,7 +35,23 @@
         .media-item.portrait img { aspect-ratio: 3/4; }
         .tech-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
         .tech-tag { padding: 0.5rem 1rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; }
-        @media (max-width: 992px) { .project-title { font-size: 2.5rem; } .media-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+        
+        /* Carousel Styles */
+        .carousel-wrapper { position: relative; margin-bottom: 2rem; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; font-size: 1.2rem; }
+        .carousel-btn:hover { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+        @media (max-width: 768px) { .carousel-btn { display: none; } /* Hide on mobile, use swipe */ }
+        
+        .css-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; scrollbar-width: none; scroll-behavior: smooth; }
+        .css-carousel::-webkit-scrollbar { display: none; }
+        .css-carousel-item { flex: 0 0 100%; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); }
+        .css-carousel-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
+        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; max-height: 75vh; margin: 0 auto; }
+        @media (max-width: 768px) { .css-carousel-item { flex: 0 0 calc(100% - 2rem); scroll-snap-align: center; } }
+        
+        @media (max-width: 992px) { .project-title { font-size: 2.5rem; } }
     </style>
 </head>
 
@@ -43,7 +59,19 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions" style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id" class="active">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            </div>
         </div>
     </nav>
 
@@ -95,64 +123,103 @@
                 <div class="project-categories">
                     <div class="category-section">
                         <h3>Buku Desain ZI-WBK</h3>
-                        <div class="media-grid-single">
-                            <div class="media-item" style="background: #ffffff; border: none;">
-                                <img src="../assets/bskap/zi_wbk_1.png" alt="Buku Desain ZI-WBK 1">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_1.png" alt="Buku Desain ZI-WBK 1">
+                                </div>
+                                <div class="css-carousel-item" style="background: #c9c8c5; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_2.png" alt="Buku Desain ZI-WBK 2">
+                                </div>
+                                <div class="css-carousel-item" style="background: #d9d9d9; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_3.png" alt="Buku Desain ZI-WBK 3">
+                                </div>
+                                <div class="css-carousel-item" style="background: #d0cec8; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_4.png" alt="Buku Desain ZI-WBK 4">
+                                </div>
                             </div>
-                            <div class="media-item" style="background: #c9c8c5; border: none;">
-                                <img src="../assets/bskap/zi_wbk_2.png" alt="Buku Desain ZI-WBK 2">
-                            </div>
-                            <div class="media-item" style="background: #d9d9d9; border: none;">
-                                <img src="../assets/bskap/zi_wbk_3.png" alt="Buku Desain ZI-WBK 3">
-                            </div>
-                            <div class="media-item" style="background: #d0cec8; border: none;">
-                                <img src="../assets/bskap/zi_wbk_4.png" alt="Buku Desain ZI-WBK 4">
-                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
 
                     <div class="category-section">
                         <h3>Buku Komik Kampanye Anti-Bullying</h3>
-                        <div class="media-grid-single">
-                            <div class="media-item" style="background: #ffffff; border: none;">
-                                <img src="../assets/bskap/komik 1.png" alt="Buku Komik Anti-Bullying 1">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/komik 1.png" alt="Buku Komik Anti-Bullying 1">
+                                </div>
+                                <div class="css-carousel-item" style="background: #efefef; border: none;">
+                                    <img src="../assets/bskap/komik 2.png" alt="Buku Komik Anti-Bullying 2">
+                                </div>
+                                <div class="css-carousel-item" style="background: #efefef; border: none;">
+                                    <img src="../assets/bskap/komik 3.png" alt="Buku Komik Anti-Bullying 3">
+                                </div>
+                                <div class="css-carousel-item" style="background: #a79f8c; border: none;">
+                                    <img src="../assets/bskap/komik 4.png" alt="Buku Komik Anti-Bullying 4">
+                                </div>
                             </div>
-                            <div class="media-item" style="background: #efefef; border: none;">
-                                <img src="../assets/bskap/komik 2.png" alt="Buku Komik Anti-Bullying 2">
-                            </div>
-                            <div class="media-item" style="background: #efefef; border: none;">
-                                <img src="../assets/bskap/komik 3.png" alt="Buku Komik Anti-Bullying 3">
-                            </div>
-                            <div class="media-item" style="background: #a79f8c; border: none;">
-                                <img src="../assets/bskap/komik 4.png" alt="Buku Komik Anti-Bullying 4">
-                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
 
                     <div class="category-section">
                         <h3>Identitas Visual AKM Kelas</h3>
-                        <div class="media-grid">
-                            <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" alt="Visual AKM Kelas 1">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" alt="Visual AKM Kelas 1">
+                                </div>
+                                <div class="css-carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800" alt="Visual AKM Kelas 2">
+                                </div>
                             </div>
-                            <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800" alt="Visual AKM Kelas 2">
-                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
 
                     <div class="category-section">
                         <h3>Media Sosial Pusat Perbukuan</h3>
-                        <div class="media-grid-single">
-                            <div class="media-item" style="background: #ffffff; border: none;">
-                                <img src="../assets/bskap/sosmed 1.png" alt="Medsos Pusbuk 1" style="max-height: none; height: auto; object-fit: cover;">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 1.png" alt="Medsos Pusbuk 1" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 2.png" alt="Medsos Pusbuk 2" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 3.png" alt="Medsos Pusbuk 3" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
                             </div>
-                            <div class="media-item" style="background: #ffffff; border: none;">
-                                <img src="../assets/bskap/sosmed 2.png" alt="Medsos Pusbuk 2" style="max-height: none; height: auto; object-fit: cover;">
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="category-section" style="margin-top: 4rem;">
+                        <h3>Internship Score & Certificate</h3>
+                        <p style="color: var(--text-secondary); text-align: center; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Sertifikat partisipasi program Magang dan Studi Independen Bersertifikat (MSIB) Kemendikbudristek beserta evaluasi kinerja.
+                        </p>
+                        <div class="carousel-wrapper" style="margin-bottom: 0;">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bskap/Sertif%20MSIB_Diamond%20Pandu-1%203.png" alt="Sertifikat MSIB BSKAP 1" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bskap/Sertif%20MSIB_Diamond%20Pandu-2%202.png" alt="Sertifikat MSIB BSKAP 2" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="media-item" style="background: #ffffff; border: none;">
-                                <img src="../assets/bskap/sosmed 3.png" alt="Medsos Pusbuk 3" style="max-height: none; height: auto; object-fit: cover;">
-                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -211,7 +278,24 @@
     <script>
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
         if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
+
+        // Carousel Navigation Script
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const carousel = wrapper.querySelector('.css-carousel');
+            const prevBtn = wrapper.querySelector('.prev');
+            const nextBtn = wrapper.querySelector('.next');
+            
+            if(prevBtn && nextBtn && carousel) {
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+            }
+        });
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

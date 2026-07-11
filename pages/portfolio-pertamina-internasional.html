@@ -38,7 +38,17 @@
             padding: 0 2rem;
         }
 
-        .proper-badge { display: inline-flex; background: #ffffff; padding: 1rem 2.5rem; border-radius: 12px; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.15); align-items: center; justify-content: center; gap: 1.5rem; }
+        .proper-badge {
+            display: inline-flex;
+            background: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
 
         .proper-badge img {
             height: 45px;
@@ -85,21 +95,27 @@
             display: block;
         }
 
-        .poster-banner { 
-            width: 100%; 
+        .poster-banner {
+            width: 100%;
             margin-top: 6rem;
             border-top: 1px solid var(--border-color);
         }
-        
-        .poster-banner img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
+
+        .poster-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         @media (max-width: 992px) {
-            .presentation-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .project-overview { margin-bottom: 3rem; }
+            .presentation-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-overview {
+                margin-bottom: 3rem;
+            }
         }
     </style>
 </head>
@@ -108,7 +124,20 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions"
+                    style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id" class="active">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            </div>
         </div>
     </nav>
 
@@ -121,7 +150,8 @@
         <!-- 2. Centered Overview & PROPER Logo -->
         <div class="project-overview">
             <div class="proper-badge">
-                <img src="../assets/pt pge/Logo_Kementerian_Kehutanan_RI_(2024) 1.png" alt="Kementerian Kehutanan Logo" style="height: 50px;">
+                <img src="../assets/pt pge/Logo_Kementerian_Kehutanan_RI_(2024) 1.png" alt="Kementerian Kehutanan Logo"
+                    style="height: 50px;">
                 <img src="../assets/pt kpi/logo proper.png" alt="PROPER EMAS Logo">
             </div>
             <p class="overview-text">Dalam proyek strategis ini, saya berperan sebagai Desainer Grafis yang bertanggung
@@ -133,9 +163,15 @@
                 konsistensi identitas merek korporat, saya berhasil menerjemahkan laporan kinerja operasional dari salah
                 satu kilang terbesar di Indonesia menjadi materi presentasi yang komunikatif dan profesional, secara
                 efektif memperkuat pesan keberlanjutan perusahaan di hadapan dewan penilai.</p>
-            
-            <div class="proper-disclaimer" style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1.25rem 1.5rem; text-align: left; border-radius: 8px; margin-top: 2rem; display: inline-block; max-width: 800px;">
-                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"><i class="fas fa-info-circle" style="color: #ffc107; margin-right: 0.5rem; font-size: 1.1rem;"></i> <strong style="color: var(--text-primary);">Catatan Konfidensial:</strong> Desain presentasi yang ditampilkan di bawah ini merupakan sampel/<em>mockup</em> karena adanya data internal perusahaan yang bersifat rahasia dan tidak diperkenankan untuk dipublikasikan di ranah umum.</p>
+
+            <div class="proper-disclaimer"
+                style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1.25rem 1.5rem; text-align: left; border-radius: 8px; margin-top: 2rem; display: inline-block; max-width: 800px;">
+                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"><i
+                        class="fas fa-info-circle" style="color: #ffc107; margin-right: 0.5rem; font-size: 1.1rem;"></i>
+                    <strong style="color: var(--text-primary);">Catatan Konfidensial:</strong> Desain presentasi yang
+                    ditampilkan di bawah ini merupakan sampel/<em>mockup</em> karena adanya data internal perusahaan
+                    yang bersifat rahasia dan tidak diperkenankan untuk dipublikasikan di ranah umum.
+                </p>
             </div>
         </div>
 
@@ -164,6 +200,22 @@
         <!-- 4. Full Width Poster Banner -->
         <div class="poster-banner">
             <img src="../assets/pt kpi/Poster CSR KPI Cilacap-01 1.png" alt="Poster CSR Inovasi Sosial">
+        </div>
+
+        <!-- 5. Instagram Embed -->
+        <div class="project-overview" style="margin-top: 6rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary);">Selamat kepada PT KPI RU IV
+                Cilacap telah meraih predikat PROPER Emas</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Postingan resmi pencapaian predikat PROPER
+                Emas PT KPI RU IV Cilacap.</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="width: 400px; height: 545px; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 100%; position: relative;">
+                    <iframe src="https://www.instagram.com/p/DW24Aj7DzJb/embed" width="400" height="580" frameborder="0" scrolling="no" allowtransparency="true" style="max-width: 100%; position: absolute; left: 0; top: 0;"></iframe>
+                </div>
+                <div style="width: 400px; height: 545px; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 100%; position: relative;">
+                    <iframe src="https://www.instagram.com/p/DXLTvQKjU4y/embed" width="400" height="580" frameborder="0" scrolling="no" allowtransparency="true" style="max-width: 100%; position: absolute; left: 0; top: 0;"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -210,7 +262,8 @@
     </section>
 
     <footer>
-        <div class="container footer-bottom" style="text-align: center; padding: 2rem 0; background: var(--bg-primary);">
+        <div class="container footer-bottom"
+            style="text-align: center; padding: 2rem 0; background: var(--bg-primary);">
             <p>&copy; 2026 Portfolio. All rights reserved.</p>
         </div>
     </footer>
@@ -219,6 +272,7 @@
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
         if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

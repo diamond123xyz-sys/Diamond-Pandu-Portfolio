@@ -24,8 +24,8 @@
         .project-description { max-width: 800px; }
         .project-description h2 { font-size: 2rem; margin-bottom: 1.5rem; }
         .project-description p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .category-section { margin-top: 2rem; }
-        .category-section h3 { font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .category-section { margin-top: 80px; }
+        .category-section h3 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
         .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
         .media-item { border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: var(--bg-tertiary); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .media-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
@@ -48,7 +48,7 @@
             border-radius: 24px;
             background: #000;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4), 0 30px 60px -12px rgba(0, 0, 0, 1);
             aspect-ratio: 9/16;
         }
         .mockup-smartphone::before {
@@ -71,6 +71,21 @@
             display: block;
         }
         @media (max-width: 992px) { .project-title { font-size: 2.5rem; } .media-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+
+        /* Carousel Styles */
+        .carousel-wrapper { position: relative; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; font-size: 1.2rem; }
+        .carousel-btn:hover { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+        @media (max-width: 768px) { .carousel-btn { display: none; } }
+        
+        .css-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; scrollbar-width: none; scroll-behavior: smooth; }
+        .css-carousel::-webkit-scrollbar { display: none; }
+        .css-carousel-item { flex: 0 0 100%; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); }
+        .css-carousel-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
+        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; max-height: 85vh; margin: 0 auto; }
+        @media (max-width: 768px) { .css-carousel-item { flex: 0 0 calc(100% - 2rem); scroll-snap-align: center; } }
     </style>
 </head>
 
@@ -78,7 +93,19 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions" style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id" class="active">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            </div>
         </div>
     </nav>
 
@@ -129,11 +156,17 @@
 
                 <div class="project-categories">
                     <div class="category-section">
-                        <h3>Social Media</h3>
-                        <div style="display: flex; flex-direction: column; gap: 3rem; align-items: center;">
+                        <h3>Social Media — Marketing Communication</h3>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
                             <div class="media-item natural" style="border: none; background: transparent; box-shadow: none; width: 100%;">
                                 <img src="../assets/bulog/sosmed_1_marketing_communication.png" alt="Social Media Campaign Marketing Communication" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3>Social Media — Public Relations</h3>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
                             <div class="media-item natural" style="border: none; background: transparent; box-shadow: none; width: 100%;">
                                 <img src="../assets/bulog/sosmed_2_public_relation.png" alt="Social Media Campaign Public Relation" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
                             </div>
@@ -142,19 +175,23 @@
 
                     <div class="category-section">
                         <h3>Printed Media</h3>
-                        <div style="display: flex; flex-direction: column; gap: 4rem;">
-                            <div class="media-item natural" style="background: #5582bc; border: none;">
-                                <img src="../assets/bulog/poster-sphp.webp" alt="Poster SPHP">
+                        <div class="carousel-wrapper" style="margin-bottom: 0;">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item">
+                                    <img src="../assets/bulog/poster-sphp.webp" alt="Poster SPHP">
+                                </div>
+                                <div class="css-carousel-item" style="padding: 0;">
+                                    <img src="../assets/bulog/poster-k3.jpg" alt="Poster K3" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="css-carousel-item">
+                                    <img src="../assets/bulog/banner-ramos.jpg" alt="Banner Beras Ramos">
+                                </div>
+                                <div class="css-carousel-item">
+                                    <img src="../assets/bulog/banner-sphp.jpg" alt="Banner Beras SPHP">
+                                </div>
                             </div>
-                            <div class="media-item natural" style="background: #211b16; border: none;">
-                                <img src="../assets/bulog/poster-k3.webp" alt="Poster K3">
-                            </div>
-                            <div class="media-item natural" style="background: #dbebeb; border: none;">
-                                <img src="../assets/bulog/banner-ramos.webp" alt="Banner Beras Ramos">
-                            </div>
-                            <div class="media-item natural" style="background: #deebee; border: none;">
-                                <img src="../assets/bulog/banner-sphp.webp" alt="Banner Beras SPHP">
-                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
 
@@ -167,6 +204,29 @@
                             <div class="mockup-smartphone">
                                 <video src="../assets/bulog/motion-packaging-baru-setra-ramos.mp4" controls playsinline></video>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section" style="margin-top: 4rem;">
+                        <h3>Internship Score & Certificate</h3>
+                        <p style="color: var(--text-secondary); text-align: center; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Sertifikat partisipasi program Magang Generasi Bertalenta (Magenta) BUMN beserta evaluasi kinerja dengan peringkat **Sangat Memuaskan (A)**.
+                        </p>
+                        <div class="carousel-wrapper" style="margin-bottom: 0;">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bulog/Sertif%20Magenta%20BULOG_Diamond%20Pandu%20P.-01%202.png" alt="Sertifikat Magenta BULOG 1" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bulog/Sertif%20Magenta%20BULOG_Diamond%20Pandu%20P.-02%201.png" alt="Sertifikat Magenta BULOG 2" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -225,7 +285,24 @@
     <script>
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
         if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
+
+        // Carousel Navigation Script
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const carousel = wrapper.querySelector('.css-carousel');
+            const prevBtn = wrapper.querySelector('.prev');
+            const nextBtn = wrapper.querySelector('.next');
+            
+            if(prevBtn && nextBtn && carousel) {
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+            }
+        });
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

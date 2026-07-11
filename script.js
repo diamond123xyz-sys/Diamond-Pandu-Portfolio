@@ -211,22 +211,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const langId = document.getElementById('lang-id');
     const langEn = document.getElementById('lang-en');
 
-    let currentLang = localStorage.getItem('portfolio-lang') || 'id';
-    setLanguage(currentLang);
+    window.currentLang = localStorage.getItem('portfolio-lang') || 'id';
+    
+    if (langId && langEn) {
+        setLanguage(window.currentLang);
 
-    langId.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('id'); });
-    langEn.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('en'); });
+        langId.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('id'); });
+        langEn.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('en'); });
+    }
 
     function setLanguage(lang) {
-        currentLang = lang;
+        window.currentLang = lang;
         localStorage.setItem('portfolio-lang', lang);
 
-        if (lang === 'id') {
-            langId.classList.add('active');
-            langEn.classList.remove('active');
-        } else {
-            langEn.classList.add('active');
-            langId.classList.remove('active');
+        if (langId && langEn) {
+            if (lang === 'id') {
+                langId.classList.add('active');
+                langEn.classList.remove('active');
+            } else {
+                langEn.classList.add('active');
+                langId.classList.remove('active');
+            }
         }
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -260,28 +265,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
     const body = document.body;
 
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-    applyTheme(savedTheme);
+    const savedThemeConfig = localStorage.getItem('portfolio-theme') || 'dark';
+    applyTheme(savedThemeConfig);
 
-    themeToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const currentTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        applyTheme(currentTheme);
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const currentTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        });
+    }
 
     function applyTheme(theme) {
         if (theme === 'light') {
             body.setAttribute('data-theme', 'light');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+            if(themeToggle) {
+                const themeIcon = themeToggle.querySelector('i');
+                if (themeIcon) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
+            }
             localStorage.setItem('portfolio-theme', 'light');
         } else {
             body.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
+            if(themeToggle) {
+                const themeIcon = themeToggle.querySelector('i');
+                if (themeIcon) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+            }
             localStorage.setItem('portfolio-theme', 'dark');
         }
     }
@@ -289,27 +299,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const hamburgerIcon = document.querySelector('.hamburger i');
 
-    hamburger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-        if (navLinks.classList.contains('active')) {
-            hamburgerIcon.classList.remove('fa-bars');
-            hamburgerIcon.classList.add('fa-times');
-        } else {
-            hamburgerIcon.classList.remove('fa-times');
-            hamburgerIcon.classList.add('fa-bars');
-        }
-    });
+    if (hamburger && navLinks) {
+        const hamburgerIcon = document.querySelector('.hamburger i');
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburgerIcon.classList.remove('fa-times');
-            hamburgerIcon.classList.add('fa-bars');
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+            }
         });
-    });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+            });
+        });
+    }
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -329,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerHTML;
 
-            const successMsg = currentLang === 'id' ? 'Pesan Terkirim' : 'Message Sent';
+            const successMsg = window.currentLang === 'id' ? 'Pesan Terkirim' : 'Message Sent';
             btn.innerHTML = `${successMsg} <i class="fas fa-check"></i>`;
             btn.style.backgroundColor = '#10b981';
             btn.style.boxShadow = '0 4px 14px 0 rgba(16, 185, 129, 0.5)';

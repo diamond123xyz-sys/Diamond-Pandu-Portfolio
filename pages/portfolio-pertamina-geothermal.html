@@ -112,7 +112,20 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
-            <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions"
+                    style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id" class="active">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Kembali</a>
+            </div>
         </div>
     </nav>
 
@@ -140,9 +153,14 @@
                 infografis teknis agrikultur dan tata letak yang modern, saya berhasil menciptakan narasi visual yang
                 harmonis untuk mempresentasikan kontribusi perusahaan dalam menciptakan kemandirian ekonomi kepada
                 Kementerian Lingkungan Hidup dan Kehutanan Republik Indonesia.</p>
-            
-            <div class="proper-disclaimer" style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1.25rem 1.5rem; text-align: left; border-radius: 8px; margin-top: 2rem; display: inline-block; max-width: 800px;">
-                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"><i class="fas fa-info-circle" style="color: #ffc107; margin-right: 0.5rem; font-size: 1.1rem;"></i> <strong style="color: var(--text-primary);">Catatan Konfidensial:</strong> Desain presentasi yang ditampilkan di bawah ini merupakan sampel/<em>mockup</em> karena adanya data internal perusahaan yang bersifat rahasia dan tidak diperkenankan untuk dipublikasikan di ranah umum.</p>
+
+            <div class="proper-disclaimer"
+                style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1.25rem 1.5rem; text-align: left; border-radius: 8px; margin-top: 2rem; display: inline-block; max-width: 800px;">
+                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"><i
+                        class="fas fa-info-circle" style="color: #ffc107; margin-right: 0.5rem; font-size: 1.1rem;"></i>
+                    <strong style="color: var(--text-primary);">Catatan Konfidensial:</strong> Desain presentasi yang
+                    ditampilkan di bawah ini merupakan sampel/<em>mockup</em> karena adanya data internal perusahaan
+                    yang bersifat rahasia dan tidak diperkenankan untuk dipublikasikan di ranah umum.</p>
             </div>
         </div>
 
@@ -171,6 +189,22 @@
             </div>
             <div class="presentation-item">
                 <img src="../assets/pt pge/8.png" alt="PGE Presentation Slide 8">
+            </div>
+        </div>
+
+        <!-- 4. Instagram Embed -->
+        <div class="project-overview" style="margin-top: 6rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary);">Selamat kepada PT Pertamina
+                Geothermal Energy Tbk Area Lahendong telah meraih predikat PROPER Hijau</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Postingan resmi pencapaian predikat PROPER
+                Hijau PGE Area Lahendong.</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <div
+                    style="width: 400px; height: 545px; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 100%; position: relative;">
+                    <iframe src="https://www.instagram.com/p/DW7rnbODy5Y/embed" width="400" height="580" frameborder="0"
+                        scrolling="no" allowtransparency="true"
+                        style="max-width: 100%; position: absolute; left: 0; top: 0;"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -229,6 +263,7 @@
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
         if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
     </script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
