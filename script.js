@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsList = ["Graphic Design", "UI/UX Design", "Front-End Development"];
     }
 
+    skillsList.unshift("Diamond Pandu's Portofolio");
+    skillsList.push("Check it out!");
+
     const typoDisplay = document.getElementById('ag-typo-display');
     const percentageText = document.getElementById('ag-percentage');
     const progressBar = document.getElementById('ag-progress-fill');
@@ -148,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-1-date': 'Februari 2026 – Juli 2026',
             'exp-1-role': 'Front-End Web Developer & UI/UX Designer (Internship)',
             'exp-1-bullet-1': 'Menerapkan metodologi <em>design thinking</em> melalui tahapan riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em>, dan pengujian iteratif untuk memastikan setiap antarmuka digital selaras dengan kebutuhan fungsional pengguna dan tujuan strategis bisnis.',
-            'exp-1-bullet-2': '<strong>Mengembangkan dan menstrukturisasi antarmuka web (Front-End) secara presisi menggunakan HTML, CSS, dan JavaScript, menjembatani hasil rancangan UI/UX ke dalam produk web yang fungsional, interaktif, responsif, dan siap rilis.</strong>',
+            'exp-1-bullet-2': 'Mengembangkan dan menstrukturisasi antarmuka web (Front-End) secara presisi menggunakan HTML, CSS, dan JavaScript, menjembatani hasil rancangan UI/UX ke dalam produk web yang fungsional, interaktif, responsif, dan siap rilis.',
             'exp-2-date': 'Desember 2025 – Januari 2026',
             'exp-2-role': 'Graphic Designer (Remote Freelance Project)',
             'exp-2-bullet-1': 'Penanggung jawab Project Desain Presentasi PROPER PT Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja pengelolaan lingkungan hidup oleh Kementerian Lingkungan Hidup dan Kehutanan (40+ desain).',
@@ -213,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'form-message': 'Detail Pesan / Penawaran',
             'form-btn': 'Kirim Pesan <i class="fas fa-paper-plane"></i>',
             'exp-btn-portfolio': 'Lihat Portofolio <i class="fas fa-external-link-alt"></i>',
-            'exp-1-location': 'Jakarta, Indonesia',
+            'exp-1-location': 'Yogyakarta, Indonesia',
             'exp-2-location': 'Sulawesi Utara (Remote)',
             'exp-3-location': 'Cilacap, Jawa Tengah',
             'exp-4-location': 'Yogyakarta, Indonesia',
@@ -244,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-1-date': 'February 2026 – July 2026',
             'exp-1-role': 'Front-End Web Developer & UI/UX Designer (Internship)',
             'exp-1-bullet-1': 'Applying design thinking methodology through user research, wireframing, high-fidelity prototyping, and iterative testing to ensure every digital interface aligns with user functional needs and strategic business goals.',
-            'exp-1-bullet-2': '<strong>Developing and structuring web interfaces (Front-End) precisely using HTML, CSS, and JavaScript, bridging UI/UX designs into functional, interactive, responsive, and production-ready web products.</strong>',
+            'exp-1-bullet-2': 'Developing and structuring web interfaces (Front-End) precisely using HTML, CSS, and JavaScript, bridging UI/UX designs into functional, interactive, responsive, and production-ready web products.',
             'exp-2-date': 'December 2025 – January 2026',
             'exp-2-role': 'Graphic Designer (Remote Freelance Project)',
             'exp-2-bullet-1': 'Person in Charge of the PROPER Presentation Design Project for PT Pertamina Geothermal Energy Tbk Lahendong Area for environmental management performance assessment by the Ministry of Environment and Forestry (40+ designs).',
@@ -263,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-5-bullet-1': 'Creating illustrations, icons, and branding assets for the National Center for Books Program.',
             'exp-5-bullet-2': 'Collaborating with the PR division in preparing social media content designs.',
             'exp-5-bullet-3': 'Designing the ZI-WBK | WBBM BSKAP 2024 Manual Book and E-Level Non-Text Comic Book Illustrations for the Anti-Bullying Campaign.',
-            'exp-1-location': 'Jakarta, Indonesia',
+            'exp-1-location': 'Yogyakarta, Indonesia',
             'exp-2-location': 'North Sulawesi (Remote)',
             'exp-3-location': 'Cilacap, Central Java',
             'exp-4-location': 'Yogyakarta, Indonesia',
