@@ -1,4 +1,110 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Contextual Personalization (Deteksi Parameter URL)
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestRole = urlParams.get('role');
+    
+    let skillsList = ["Graphic Design", "Brand Identity", "Visual Direction"];
+    
+    if (guestRole === 'frontend') {
+        skillsList = ["Graphic Design", "UI/UX Design", "Front-End Development", "Digital Transformation"];
+    } else if (guestRole === 'uiux') {
+        skillsList = ["Graphic Design", "User Research", "Prototyping", "UI/UX Design", "Product Strategy"];
+    } else {
+        skillsList = ["Graphic Design", "UI/UX Design", "Front-End Development"];
+    }
+
+    const typoDisplay = document.getElementById('ag-typo-display');
+    const percentageText = document.getElementById('ag-percentage');
+    const progressBar = document.getElementById('ag-progress-fill');
+    const logText = document.getElementById('ag-log-text');
+    const loaderScreen = document.getElementById('ag-loader-screen');
+    
+    if(loaderScreen && typoDisplay && percentageText && progressBar && logText) {
+        const logs = [
+            "Antigravity Agent: Mapping layout structures...",
+            "Antigravity Agent: Compiling visual identity assets...",
+            "Antigravity Agent: Optimizing micro-interactions...",
+            "Decrypting typography scales...",
+            "Deploying clean front-end code..."
+        ];
+
+        const imagesArray = Array.from(document.images);
+        let loadedImages = 0;
+        const totalImages = imagesArray.length;
+        let currentProgress = 0;
+        let targetProgress = 0;
+
+        if (totalImages === 0) targetProgress = 100;
+        imagesArray.forEach(img => {
+            if (img.complete) {
+                loadedImages++;
+                targetProgress = Math.floor((loadedImages / totalImages) * 100);
+            } else {
+                img.addEventListener('load', () => {
+                    loadedImages++;
+                    targetProgress = Math.floor((loadedImages / totalImages) * 100);
+                });
+                img.addEventListener('error', () => {
+                    loadedImages++; 
+                    targetProgress = Math.floor((loadedImages / totalImages) * 100);
+                });
+            }
+        });
+
+        let skillIndex = 0;
+        let logIndex = 0;
+
+        const lerpProgress = setInterval(() => {
+            if (currentProgress < targetProgress) currentProgress += 1;
+            
+            if(currentProgress < 100 && targetProgress === currentProgress) {
+                 currentProgress += Math.random() > 0.5 ? 1 : 0; 
+            }
+
+            if (currentProgress > 100) currentProgress = 100;
+
+            percentageText.innerText = `${Math.floor(currentProgress)}%`;
+            progressBar.style.width = `${currentProgress}%`;
+
+            if (currentProgress % Math.floor(100 / skillsList.length) === 0 && skillIndex < skillsList.length) {
+                typoDisplay.style.opacity = 0;
+                setTimeout(() => {
+                    typoDisplay.innerText = skillsList[skillIndex];
+                    typoDisplay.style.opacity = 1;
+                    skillIndex++;
+                }, 100);
+            }
+
+            if (currentProgress % 20 === 0 && logIndex < logs.length) {
+                logText.innerText = logs[logIndex];
+                logIndex++;
+            }
+
+            if (currentProgress === 100) {
+                clearInterval(lerpProgress);
+                logText.innerText = "All systems go. Transitioning UX...";
+                
+                let uri = '';
+                if (guestRole === 'frontend') uri = 'pages/portfolio-vinix.html';
+                else uri = 'pages/portfolio-bulog.html';
+
+                if(uri && document.body.contains(loaderScreen)) {
+                   const link = document.createElement('link');
+                   link.rel = 'prefetch';
+                   link.href = uri;
+                   document.head.appendChild(link);
+                }
+                
+                setTimeout(() => {
+                    loaderScreen.classList.add('loaded');
+                    document.body.style.overflowY = "visible";
+                }, 500);
+            }
+        }, 20);
+    } else {
+        document.body.style.overflowY = "visible";
+    }
+
     // Experience Toggle Logic
     const expItems = document.querySelectorAll('.exp-item');
     expItems.forEach(item => {
@@ -23,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-skills': 'Keahlian & Edukasi',
             'nav-achievements': 'Pencapaian',
             'nav-contact': 'Hubungi Saya',
-            'hero-badge': 'Siap untuk Peluang Karir Baru',
-            'hero-title': 'Paduan <span>Estetika</span> & <br>Inovasi <span>Digital.</span>',
+            'hero-badge': 'Portofolio Diamond Pandu',
+            'hero-title': 'Dari Imajinasi hingga <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi Realitas Visual yang <span>Memukau.</span>',
             'hero-subtitle': 'Saya adalah seorang <strong>Visual Communication & Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk berbagai institusi besar termasuk BUMN dan Kementerian.',
             'hero-btn-exp': 'Lihat Pengalaman <i class="fas fa-arrow-right"></i>',
             'hero-btn-cv': 'Unduh CV <i class="fas fa-download"></i>',
@@ -83,8 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'cert-header': 'Sertifikasi Internasional & Nasional',
             'cert-1-desc': 'Graphic Design and Illustration using Adobe Illustrator',
             'cert-2-desc': 'UX Design Professional',
-            'cert-3-title': 'Sertifikat Bahasa Asing',
-            'cert-3-desc': 'EFSET (C2 Proficient) | TOEFL ITP (Skor: 543/677)',
+            'cert-3-title': 'Sertifikat EFSET English',
+            'cert-3-desc': 'Tingkat: C2 Proficient (Advanced)',
+            'cert-4-title': 'Sertifikat TOEFL ITP',
+            'cert-4-desc': 'Skor: 543/677 (High Intermediate)',
             'ach-header-title': 'Pencapaian & <span>Aktivitas</span>',
             'ach-header-subtitle': 'Dedikasi dan apresiasi atas karya serta partisipasi aktif di bidang desain kreatif.',
             'ach-card-1-title': 'Penghargaan',
@@ -117,8 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-skills': 'Skills & Education',
             'nav-achievements': 'Achievements',
             'nav-contact': 'Contact Me',
-            'hero-badge': 'Ready for New Opportunities',
-            'hero-title': 'Merging <span>Aesthetics</span> & <br>Digital <span>Innovation.</span>',
+            'hero-badge': 'Diamond Pandu\'s Portfolio',
+            'hero-title': 'From Imagination to <span>Execution,</span><br> I turn Creative Ideas into Striking Visual <span>Realities.</span>',
             'hero-subtitle': 'I am a <strong>Visual Communication & Digital Transformation Designer</strong> with comprehensive expertise in UI/UX, Front-End Development, and Graphic Design. Experienced in delivering strategic visual solutions for various major institutions including BUMN and Ministries.',
             'hero-btn-exp': 'View Experience <i class="fas fa-arrow-right"></i>',
             'hero-btn-cv': 'Download CV <i class="fas fa-download"></i>',
@@ -182,8 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'cert-header': 'International & National Certifications',
             'cert-1-desc': 'Graphic Design and Illustration using Adobe Illustrator',
             'cert-2-desc': 'UX Design Professional',
-            'cert-3-title': 'Foreign Language Certificate',
-            'cert-3-desc': 'EFSET (C2 Proficient) | TOEFL ITP (Score: 543/677)',
+            'cert-3-title': 'EFSET English Certificate',
+            'cert-3-desc': 'Level: C2 Proficient (Advanced)',
+            'cert-4-title': 'TOEFL ITP Certificate',
+            'cert-4-desc': 'Score: 543/677 (High Intermediate)',
             'ach-header-title': 'Achievements & <span>Activities</span>',
             'ach-header-subtitle': 'Dedication and appreciation for work and active participation in the field of creative design.',
             'ach-card-1-title': 'Awards',
@@ -212,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langEn = document.getElementById('lang-en');
 
     window.currentLang = localStorage.getItem('portfolio-lang') || 'id';
-    
+
     if (langId && langEn) {
         setLanguage(window.currentLang);
 
@@ -281,14 +391,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(theme) {
         if (theme === 'light') {
             body.setAttribute('data-theme', 'light');
-            if(themeToggle) {
+            if (themeToggle) {
                 const themeIcon = themeToggle.querySelector('i');
                 if (themeIcon) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
             }
             localStorage.setItem('portfolio-theme', 'light');
         } else {
             body.removeAttribute('data-theme');
-            if(themeToggle) {
+            if (themeToggle) {
                 const themeIcon = themeToggle.querySelector('i');
                 if (themeIcon) { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
             }

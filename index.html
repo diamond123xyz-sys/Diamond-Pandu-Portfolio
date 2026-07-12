@@ -16,7 +16,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
+    <!-- Antigravity Personalization Loading Screen -->
+    <div id="ag-loader-screen" class="ag-loader">
+      <div class="ag-loader-content">
+        <div class="ag-dynamic-text">
+            <h1 id="ag-typo-display" style="opacity: 0;">Graphic Design</h1>
+        </div>
+        
+        <div class="ag-progress-wrapper">
+            <h2 id="ag-percentage">0%</h2>
+            <div class="ag-progress-bar">
+                <div id="ag-progress-fill"></div>
+            </div>
+        </div>
+        
+        <div class="ag-terminal-log">
+            <span class="blinking-cursor">></span>
+            <span id="ag-log-text">Antigravity Agent: Initializing core protocols...</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -46,25 +67,14 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="badge" data-i18n="hero-badge">Siap untuk Peluang Karir Baru</div>
-                <h1 class="hero-title" data-i18n="hero-title">Paduan <span>Estetika</span> & <br>Inovasi
-                    <span>Digital.</span>
-                </h1>
-                <p class="hero-subtitle" data-i18n="hero-subtitle">Saya adalah seorang <strong>Visual Communication &
-                        Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End
-                    Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk
-                    berbagai institusi besar termasuk BUMN dan Kementerian</p>
-                <div class="hero-actions">
-                    <a href="#experience" class="btn-primary" data-i18n="hero-btn-exp">Lihat Pengalaman <i
-                            class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn-secondary" data-i18n="hero-btn-cv">Unduh CV <i
-                            class="fas fa-download"></i></a>
-                </div>
-                <div class="trust-indicators">
+        <div class="container">
+            <div class="hero-content"
+                style="max-width: 800px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 60px;">
+                <div class="badge" data-i18n="hero-badge">Portofolio Diamond Pandu</div>
+                <h1 class="hero-title" data-i18n="hero-title" style="margin-bottom: 2rem;">Dari Imajinasi hingga <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi Realitas Visual yang <span>Memukau.</span></h1>
+                <div class="trust-indicators" style="margin-top: 2rem;">
                     <p data-i18n="hero-trust">Berpengalaman memberikan dampak positif di:</p>
-                    <div class="logos-placeholder">
+                    <div class="logos-placeholder" style="justify-content: center;">
                         <div class="trust-logo-wrapper">
                             <img src="assets/img/PT Kilang Pertamina Internasional.svg" alt="Pertamina"
                                 class="trust-logo logo-light">
@@ -89,9 +99,31 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding" style="background-color: var(--bg-tertiary);">
+        <div class="container hero-container">
+            <div class="about-content">
+                <div class="section-header align-left" style="margin-bottom: 2rem;">
+                    <h2 data-i18n="about-header-title">Tentang <span>Saya</span></h2>
+                </div>
+                <p class="hero-subtitle" data-i18n="about-subtitle" style="font-size: 1.2rem; line-height: 1.8;">Saya
+                    adalah seorang <strong>Visual Communication &
+                        Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End
+                    Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk
+                    berbagai institusi besar termasuk BUMN dan Kementerian.</p>
+                <div class="hero-actions" style="margin-top: 2rem; margin-bottom: 0;">
+                    <a href="#experience" class="btn-primary" data-i18n="hero-btn-exp">Lihat Pengalaman <i
+                            class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-secondary" data-i18n="hero-btn-cv">Unduh CV <i
+                            class="fas fa-download"></i></a>
+                </div>
+            </div>
             <div class="hero-visual">
                 <div class="hero-profile-container">
-                    <div class="profile-img-wrapper">
+                    <div class="profile-img-wrapper" style="box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                         <img src="assets/img/Foto Diri.png" alt="Profile Photo">
                     </div>
                 </div>
@@ -165,9 +197,8 @@
                 <div class="exp-item glass-effect" data-category="visual">
                     <div class="exp-summary">
                         <div class="company-logo">
-                            <img src="assets/img/pertamina geothermal putih.png"
-                                alt="PT Pertamina Geothermal Energy Logo" class="logo-light"
-                                style="filter: brightness(0.2);">
+                            <img src="assets/img/pertamina geothermal.png" alt="PT Pertamina Geothermal Energy Logo"
+                                class="logo-light">
                             <img src="assets/img/pertamina geothermal putih.png"
                                 alt="PT Pertamina Geothermal Energy Logo" class="logo-dark">
                         </div>
@@ -339,23 +370,37 @@
                 <!-- Skills Column -->
                 <div class="skills-column" style="display: flex; flex-direction: column; gap: 2rem;">
                     <div class="section-header align-left" style="margin-bottom: 0;">
-                        <h2 data-i18n="skills-header" style="font-size: 2.5rem; line-height: 1.1;">Keahlian & <br><span>Software</span></h2>
+                        <h2 data-i18n="skills-header" style="font-size: 2.5rem; line-height: 1.1;">Keahlian &
+                            <br><span>Software</span></h2>
                     </div>
 
                     <div class="bento-card-sm" style="background: var(--bg-tertiary);">
-                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i class="fas fa-laptop-code"></i> <span data-i18n="hard-skills-title">Hard Skills</span></h3>
+                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i
+                                class="fas fa-laptop-code"></i> <span data-i18n="hard-skills-title">Hard Skills</span>
+                        </h3>
                         <div class="tags-container" style="margin-top: 1rem;">
-                            <span class="skill-tag" data-i18n="skill-1" style="background: var(--bg-secondary); border-color: transparent;">UI/UX Design</span>
-                            <span class="skill-tag" data-i18n="skill-2" style="background: var(--bg-secondary); border-color: transparent;">Front-End (HTML, CSS, JS)</span>
-                            <span class="skill-tag" data-i18n="skill-3" style="background: var(--bg-secondary); border-color: transparent;">Logo & Branding Elements</span>
-                            <span class="skill-tag" data-i18n="skill-4" style="background: var(--bg-secondary); border-color: transparent;">Iconography</span>
-                            <span class="skill-tag" data-i18n="skill-5" style="background: var(--bg-secondary); border-color: transparent;">Digital Layout</span>
-                            <span class="skill-tag" data-i18n="skill-6" style="background: var(--bg-secondary); border-color: transparent;">Aset Media Sosial</span>
+                            <span class="skill-tag" data-i18n="skill-1"
+                                style="background: var(--bg-secondary); border-color: transparent;">UI/UX Design</span>
+                            <span class="skill-tag" data-i18n="skill-2"
+                                style="background: var(--bg-secondary); border-color: transparent;">Front-End (HTML,
+                                CSS, JS)</span>
+                            <span class="skill-tag" data-i18n="skill-3"
+                                style="background: var(--bg-secondary); border-color: transparent;">Logo & Branding
+                                Elements</span>
+                            <span class="skill-tag" data-i18n="skill-4"
+                                style="background: var(--bg-secondary); border-color: transparent;">Iconography</span>
+                            <span class="skill-tag" data-i18n="skill-5"
+                                style="background: var(--bg-secondary); border-color: transparent;">Digital
+                                Layout</span>
+                            <span class="skill-tag" data-i18n="skill-6"
+                                style="background: var(--bg-secondary); border-color: transparent;">Aset Media
+                                Sosial</span>
                         </div>
                     </div>
 
                     <div class="bento-card-sm" style="background: var(--bg-tertiary);">
-                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i class="fas fa-brain"></i> <span data-i18n="soft-skills-title">Soft Skills</span></h3>
+                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i
+                                class="fas fa-brain"></i> <span data-i18n="soft-skills-title">Soft Skills</span></h3>
                         <ul class="custom-list">
                             <li data-i18n="soft-1">Kreativitas Tinggi & Kepekaan Estetika</li>
                             <li data-i18n="soft-2">Kolaborasi Tim & Komunikasi Proyek</li>
@@ -364,31 +409,40 @@
                     </div>
 
                     <div class="bento-card-sm" style="background: var(--bg-tertiary);">
-                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i class="fas fa-tools"></i> <span data-i18n="software-title">Software Mastery</span></h3>
+                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i
+                                class="fas fa-tools"></i> <span data-i18n="software-title">Software Mastery</span></h3>
                         <div class="software-progress-list" style="margin-top: 1rem;">
                             <div class="software-progress-item">
                                 <div class="software-info">
                                     <span><i class="fab fa-adobe"></i> Illustrator & Photoshop</span>
                                 </div>
-                                <div class="progress-bar" style="background: var(--bg-secondary);"><div class="progress-fill" style="width: 95%;"></div></div>
+                                <div class="progress-bar" style="background: var(--bg-secondary);">
+                                    <div class="progress-fill" style="width: 95%;"></div>
+                                </div>
                             </div>
                             <div class="software-progress-item">
                                 <div class="software-info">
                                     <span><i class="fab fa-figma"></i> Figma</span>
                                 </div>
-                                <div class="progress-bar" style="background: var(--bg-secondary);"><div class="progress-fill" style="width: 80%;"></div></div>
+                                <div class="progress-bar" style="background: var(--bg-secondary);">
+                                    <div class="progress-fill" style="width: 80%;"></div>
+                                </div>
                             </div>
                             <div class="software-progress-item">
                                 <div class="software-info">
                                     <span><i class="fas fa-code"></i> VS Code (HTML/CSS/JS)</span>
                                 </div>
-                                <div class="progress-bar" style="background: var(--bg-secondary);"><div class="progress-fill" style="width: 85%;"></div></div>
+                                <div class="progress-bar" style="background: var(--bg-secondary);">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
                             </div>
                             <div class="software-progress-item">
                                 <div class="software-info">
                                     <span><i class="fas fa-video"></i> Premiere Pro & After Effects</span>
                                 </div>
-                                <div class="progress-bar" style="background: var(--bg-secondary);"><div class="progress-fill" style="width: 75%;"></div></div>
+                                <div class="progress-bar" style="background: var(--bg-secondary);">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -397,44 +451,77 @@
                 <!-- Education & Certifications Column -->
                 <div class="edu-column" style="display: flex; flex-direction: column; gap: 2rem;">
                     <div class="section-header align-left" style="margin-bottom: 0;">
-                        <h2 data-i18n="edu-header" style="font-size: 2.5rem; line-height: 1.1;">Edukasi & <br><span>Sertifikasi</span></h2>
+                        <h2 data-i18n="edu-header" style="font-size: 2.5rem; line-height: 1.1;">Edukasi &
+                            <br><span>Sertifikasi</span></h2>
                     </div>
 
-                    <div class="bento-card-sm" style="background: var(--bg-tertiary); display: flex; flex-direction: column; justify-content: center; min-height: 200px;">
-                        <div class="edu-header" style="flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem;">
-                            <h3 style="font-size: 1.5rem; margin: 0; line-height: 1.2;">Institut Seni Indonesia Surakarta</h3>
-                            <span class="gpa" data-i18n="gpa" style="background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem;">IPK: 3.69 / 4.00</span>
+                    <div class="bento-card-sm"
+                        style="background: var(--bg-tertiary); display: flex; flex-direction: column; justify-content: center; min-height: 200px;">
+                        <div class="edu-header"
+                            style="flex-direction: column; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.5rem; margin: 0; line-height: 1.2;">Institut Seni Indonesia
+                                Surakarta</h3>
+                            <span class="gpa" data-i18n="gpa"
+                                style="background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem;">IPK:
+                                3.69 / 4.00</span>
                         </div>
-                        <p class="degree" data-i18n="degree" style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">S1 Desain Komunikasi Visual</p>
-                        <p class="edu-date" data-i18n="edu-date" style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0;"><i class="far fa-calendar-alt"></i> Agustus 2021 – Januari 2026</p>
+                        <p class="degree" data-i18n="degree"
+                            style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">S1 Desain
+                            Komunikasi Visual</p>
+                        <p class="edu-date" data-i18n="edu-date"
+                            style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0;"><i
+                                class="far fa-calendar-alt"></i> Agustus 2021 – Januari 2026</p>
                         <ul class="custom-list mt-3" style="font-size: 0.95rem; color: var(--text-secondary);">
-                            <li data-i18n="edu-bullet-1">Fokus pada desain branding, ilustrasi digital, komunikasi visual, dan layout digital.</li>
-                            <li data-i18n="edu-bullet-2">Aktif dalam kepanitiaan, proyek desain, dan kompetisi (Juara 3 Nasional PPK ORMAWA).</li>
+                            <li data-i18n="edu-bullet-1">Fokus pada desain branding, ilustrasi digital, komunikasi
+                                visual, dan layout digital.</li>
+                            <li data-i18n="edu-bullet-2">Aktif dalam kepanitiaan, proyek desain, dan kompetisi (Juara 3
+                                Nasional PPK ORMAWA).</li>
                         </ul>
                     </div>
 
                     <div class="bento-card-sm" style="background: var(--bg-tertiary);">
-                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i class="fas fa-certificate"></i> <span data-i18n="cert-header">Sertifikasi Internasional & Nasional</span></h3>
-                        <div class="cert-grid" style="margin-top: 1rem;">
-                            <div class="cert-card" style="background: var(--bg-secondary); border: none;">
-                                <div class="cert-icon adobe"><i class="fas fa-award"></i></div>
-                                <div class="cert-content">
+                        <h3 class="subsection-title" style="font-size: 1.1rem; color: var(--accent-primary);"><i
+                                class="fas fa-certificate"></i> <span data-i18n="cert-header">Sertifikasi Internasional
+                                & Nasional</span></h3>
+                        <div class="cert-grid"
+                            style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <div class="cert-card"
+                                style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
+                                <div class="cert-icon adobe"><img src="assets/img/adobe.png" alt="Adobe Certified"
+                                        style="height: 48px; object-fit: contain;"></div>
+                                <div class="cert-content" style="display: flex; flex-direction: column; line-height: 1.4; gap: 0.25rem;">
                                     <strong>Adobe Certified Professional</strong>
-                                    <span data-i18n="cert-1-desc">Graphic Design and Illustration using Adobe Illustrator</span>
+                                    <span data-i18n="cert-1-desc">Graphic Design and Illustration using Adobe
+                                        Illustrator</span>
                                 </div>
                             </div>
-                            <div class="cert-card" style="background: var(--bg-secondary); border: none;">
-                                <div class="cert-icon google"><i class="fas fa-award"></i></div>
-                                <div class="cert-content">
+                            <div class="cert-card"
+                                style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
+                                <div class="cert-icon google"><img src="assets/img/google.png" alt="Google Certified"
+                                        style="height: 48px; object-fit: contain;"></div>
+                                <div class="cert-content" style="display: flex; flex-direction: column; line-height: 1.4; gap: 0.25rem;">
                                     <strong>Google Certified</strong>
                                     <span data-i18n="cert-2-desc">UX Design Professional</span>
                                 </div>
                             </div>
-                            <div class="cert-card" style="background: var(--bg-secondary); border: none;">
-                                <div class="cert-icon language"><i class="fas fa-language"></i></div>
-                                <div class="cert-content">
-                                    <strong data-i18n="cert-3-title">Sertifikat Bahasa Asing</strong>
-                                    <span data-i18n="cert-3-desc">EFSET (C2 Proficient) | TOEFL ITP (Skor: 543/677)</span>
+                            <div class="cert-card"
+                                style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
+                                <div class="cert-icon efset" style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 8px; padding: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0;">
+                                    <img src="assets/img/efset.png" alt="EFSET English" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </div>
+                                <div class="cert-content" style="display: flex; flex-direction: column; line-height: 1.4; gap: 0.25rem;">
+                                    <strong data-i18n="cert-3-title">Sertifikat EFSET English</strong>
+                                    <span data-i18n="cert-3-desc">C2 Proficient (Advanced English)</span>
+                                </div>
+                            </div>
+                            <div class="cert-card"
+                                style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
+                                <div class="cert-icon toefl" style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 8px; padding: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0;">
+                                    <img src="assets/img/toefl.png" alt="TOEFL ITP" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </div>
+                                <div class="cert-content" style="display: flex; flex-direction: column; line-height: 1.4; gap: 0.25rem;">
+                                    <strong data-i18n="cert-4-title">Sertifikat TOEFL ITP</strong>
+                                    <span data-i18n="cert-4-desc">Skor: 543/677 (High Intermediate)</span>
                                 </div>
                             </div>
                         </div>
@@ -502,7 +589,8 @@
         <div class="container">
             <div class="contact-content">
                 <h2 data-i18n="contact-header">Mari ciptakan solusi digital <span>berdampak besar</span> bersama.</h2>
-                <p data-i18n="contact-subtitle">Membutuhkan tenaga profesional di bidang desain komunikasi visual atau front-end development? Saya siap berdiskusi untuk membawa nilai tambah bagi perusahaan Anda.</p>
+                <p data-i18n="contact-subtitle">Membutuhkan tenaga profesional di bidang desain komunikasi visual atau
+                    front-end development? Saya siap berdiskusi untuk membawa nilai tambah bagi perusahaan Anda.</p>
                 <div class="contact-info" style="margin-top: 1rem;">
                     <a href="mailto:diamond123xyz@gmail.com" class="info-item">
                         <i class="fas fa-envelope"></i>
