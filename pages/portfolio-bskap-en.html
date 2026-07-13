@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSKAP Kemendikbudristek Portfolio | Digital Transformation Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .portfolio-detail { padding-top: 150px; }
+        .project-hero { margin-bottom: 4rem; }
+        .project-badge { display: inline-block; padding: 0.5rem 1.2rem; background: rgba(59, 130, 246, 0.1); color: var(--accent-primary); border-radius: 100px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .project-title { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; }
+        .project-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 2rem; background: var(--bg-secondary); border-radius: 20px; border: 1px solid var(--border-color); }
+        .meta-item h4 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .meta-item p { font-weight: 600; color: var(--text-primary); }
+        .project-content { display: flex; flex-direction: column; gap: 4rem; margin-top: 4rem; }
+        .project-description { max-width: 800px; }
+        .project-description h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .project-description p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .category-section { margin-top: 80px; }
+        .category-section h3 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        .media-grid-single { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .media-grid-single .media-item img { aspect-ratio: auto; object-fit: contain; max-height: 75vh; }
+        .media-item { border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: var(--bg-tertiary); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .media-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
+        .media-item img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 4/3; }
+        .media-item.portrait img { aspect-ratio: 3/4; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .tech-tag { padding: 0.5rem 1rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; }
+        
+        /* Carousel Styles */
+        .carousel-wrapper { position: relative; margin-bottom: 2rem; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; font-size: 1.2rem; }
+        .carousel-btn:hover { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+        @media (max-width: 768px) { .carousel-btn { display: none; } }
+        
+        .css-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; scrollbar-width: none; scroll-behavior: smooth; }
+        .css-carousel::-webkit-scrollbar { display: none; }
+        .css-carousel-item { flex: 0 0 100%; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); }
+        .css-carousel-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
+        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; max-height: 75vh; margin: 0 auto; }
+        @media (max-width: 768px) { .css-carousel-item { flex: 0 0 calc(100% - 2rem); scroll-snap-align: center; } }
+        
+        @media (max-width: 992px) { .project-title { font-size: 2.5rem; } }
+    </style>
+</head>
+
+<body class="portfolio-page">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions" style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en" class="active">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="portfolio-detail section-padding">
+        <div class="container">
+            <div class="project-hero">
+                <div class="project-badge">Graphic Design & Illustration</div>
+                <h1 class="project-title">Branding & Educational Illustration BSKAP Kemendikbudristek</h1>
+                <div class="project-meta-grid">
+                    <div class="meta-item">
+                        <h4>Client / Company</h4>
+                        <p>BSKAP Kemendikbudristek</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Role</h4>
+                        <p>Graphic Designer & Illustrator (MSIB)</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Duration</h4>
+                        <p>September 2024 – December 2024</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Category</h4>
+                        <p>Educational Design</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>Contributed to the National Books Center Program (Pusat Perbukuan) by designing illustration assets, icons, and branding. The project aimed to elevate the quality of educational materials using child-friendly and educational visual approaches.</p>
+                    
+                    <h3>Design Challenge</h3>
+                    <p>Creating a consistent illustration style across various educational levels ranging from Early Childhood Education (PAUD) to Secondary Education, while ensuring that the educational messages are conveyed clearly and attractively.</p>
+
+                    <h3>Outcomes & Impact</h3>
+                    <p>Successful design completion of the ZI-WBK Book Guideline and non-text anti-bullying comic book illustrations, which are currently being utilized as supporting materials for national campaigns within schools.</p>
+
+                    <h3>Technologies Used</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Digital Illustration</span>
+                        <span class="tech-tag">Layout Design</span>
+                        <span class="tech-tag">Character Design</span>
+                    </div>
+                </div>
+
+                <div class="project-categories">
+                    <div class="category-section">
+                        <h3>ZI-WBK Book Design</h3>
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_1.png" alt="Buku Desain ZI-WBK 1">
+                                </div>
+                                <div class="css-carousel-item" style="background: #c9c8c5; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_2.png" alt="Buku Desain ZI-WBK 2">
+                                </div>
+                                <div class="css-carousel-item" style="background: #d9d9d9; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_3.png" alt="Buku Desain ZI-WBK 3">
+                                </div>
+                                <div class="css-carousel-item" style="background: #d0cec8; border: none;">
+                                    <img src="../assets/bskap/zi_wbk_4.png" alt="Buku Desain ZI-WBK 4">
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3>Anti-Bullying Campaign Comic Book</h3>
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/komik 1.png" alt="Buku Komik Anti-Bullying 1">
+                                </div>
+                                <div class="css-carousel-item" style="background: #efefef; border: none;">
+                                    <img src="../assets/bskap/komik 2.png" alt="Buku Komik Anti-Bullying 2">
+                                </div>
+                                <div class="css-carousel-item" style="background: #efefef; border: none;">
+                                    <img src="../assets/bskap/komik 3.png" alt="Buku Komik Anti-Bullying 3">
+                                </div>
+                                <div class="css-carousel-item" style="background: #a79f8c; border: none;">
+                                    <img src="../assets/bskap/komik 4.png" alt="Buku Komik Anti-Bullying 4">
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3>AKM Kelas Visual Identity</h3>
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identias_1.png" alt="Visual AKM Kelas 1">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_2.png" alt="Visual AKM Kelas 2">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_3.png" alt="Visual AKM Kelas 3">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_4.png" alt="Visual AKM Kelas 4">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_5.png" alt="Visual AKM Kelas 5">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_6.png" alt="Visual AKM Kelas 6">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_7.png" alt="Visual AKM Kelas 7">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_8.png" alt="Visual AKM Kelas 8">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <video src="../assets/bskap/identitaas_9.mp4" autoplay loop muted playsinline style="max-height: 75vh; width: 100%; height: auto; object-fit: contain;"></video>
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_10.png" alt="Visual AKM Kelas 10">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_11.png" alt="Visual AKM Kelas 11">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_12.png" alt="Visual AKM Kelas 12">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_13.png" alt="Visual AKM Kelas 13">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_14.png" alt="Visual AKM Kelas 14">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_15.png" alt="Visual AKM Kelas 15">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_16.png" alt="Visual AKM Kelas 16">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_17.png" alt="Visual AKM Kelas 17">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_18.png" alt="Visual AKM Kelas 18">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_19.png" alt="Visual AKM Kelas 19">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_20.png" alt="Visual AKM Kelas 20">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_21.png" alt="Visual AKM Kelas 21">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_22.png" alt="Visual AKM Kelas 22">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_23.png" alt="Visual AKM Kelas 23">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_24.png" alt="Visual AKM Kelas 24">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_25.png" alt="Visual AKM Kelas 25">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_26.png" alt="Visual AKM Kelas 26">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_26a.png" alt="Visual AKM Kelas 26a">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_27.png" alt="Visual AKM Kelas 27">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_28.png" alt="Visual AKM Kelas 28">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_29.png" alt="Visual AKM Kelas 29">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_30.png" alt="Visual AKM Kelas 30">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_31.png" alt="Visual AKM Kelas 31">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_32.png" alt="Visual AKM Kelas 32">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_33.png" alt="Visual AKM Kelas 33">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_34.png" alt="Visual AKM Kelas 34">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_35.png" alt="Visual AKM Kelas 35">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_36.png" alt="Visual AKM Kelas 36">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_37.png" alt="Visual AKM Kelas 37">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_38.png" alt="Visual AKM Kelas 38">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_39.png" alt="Visual AKM Kelas 39">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_40.png" alt="Visual AKM Kelas 40">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_41.png" alt="Visual AKM Kelas 41">
+                                </div>
+                                <div class="css-carousel-item" style="border: none;">
+                                    <img src="../assets/bskap/identitaas_42.png" alt="Visual AKM Kelas 42">
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3>Pusat Perbukuan Social Media Assets</h3>
+                        <div class="carousel-wrapper">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 1.png" alt="Medsos Pusbuk 1" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 2.png" alt="Medsos Pusbuk 2" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
+                                <div class="css-carousel-item" style="background: #ffffff; border: none;">
+                                    <img src="../assets/bskap/sosmed 3.png" alt="Medsos Pusbuk 3" style="max-height: none; height: auto; object-fit: cover;">
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="category-section" style="margin-top: 4rem;">
+                        <h3>Internship Score & Certificate</h3>
+                        <p style="color: var(--text-secondary); text-align: center; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Certificate of participation in the Certified Internship Program (MSIB) by the Ministry of Education, Culture, Research, and Technology along with performance evaluation.
+                        </p>
+                        <div class="carousel-wrapper" style="margin-bottom: 0;">
+                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="css-carousel">
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bskap/Sertif%20MSIB_Diamond%20Pandu-1%203.png" alt="Sertifikat MSIB BSKAP 1" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+                                <div class="css-carousel-item" style="padding: 2rem;">
+                                    <div style="background: #faf8f5; padding: 16px; border: 14px solid #6b4423; border-radius: 6px; box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.05); margin: 0 auto; display: inline-block;">
+                                        <img src="../assets/bskap/Sertif%20MSIB_Diamond%20Pandu-2%202.png" alt="Sertifikat MSIB BSKAP 2" style="height: auto; max-height: 70vh; width: auto; display: block; border: 1px solid rgba(0,0,0,0.1);">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects Exploration -->
+    <section class="other-projects">
+        <div class="container">
+            <h2 class="other-projects-title">Explore Other Projects</h2>
+            <div class="other-projects-grid">
+                <!-- KPI -->
+                <a href="portfolio-pertamina-internasional-en.html" class="other-project-card">
+                    <img src="../assets/pt kpi/hero section.png" alt="KPI" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Visual Communication</span>
+                        <h3>PT Kilang Pertamina Internasional</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- PGE -->
+                <a href="portfolio-pertamina-geothermal-en.html" class="other-project-card">
+                    <img src="../assets/pt pge/hero section.webp" alt="PGE" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Strategic Presentation</span>
+                        <h3>PT Pertamina Geothermal Energy</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- VINIX -->
+                <a href="portfolio-vinix-en.html" class="other-project-card">
+                    <img src="../assets/vinix7/indigo.png" alt="VINIX" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Digital Transformation</span>
+                        <h3>PT VINIX Seven Aurum</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+        if (savedTheme === 'light') document.body.setAttribute('data-theme', 'light');
+
+        // Carousel Navigation Script
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const carousel = wrapper.querySelector('.css-carousel');
+            const prevBtn = wrapper.querySelector('.prev');
+            const nextBtn = wrapper.querySelector('.next');
+            
+            if(prevBtn && nextBtn && carousel) {
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+
+</html>

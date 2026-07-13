@@ -338,9 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.currentLang = localStorage.getItem('portfolio-lang') || 'id';
 
-    if (langId && langEn) {
-        setLanguage(window.currentLang);
+    // Call setLanguage unconditionally to handle redirects on load
+    setLanguage(window.currentLang);
 
+    if (langId && langEn) {
         langId.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('id'); });
         langEn.addEventListener('click', (e) => { e.stopPropagation(); setLanguage('en'); });
     }
@@ -348,6 +349,36 @@ document.addEventListener('DOMContentLoaded', () => {
     function setLanguage(lang) {
         window.currentLang = lang;
         localStorage.setItem('portfolio-lang', lang);
+
+        // Language Redirections for subpages
+        const pathSegments = window.location.pathname.split('/');
+        const pageName = pathSegments[pathSegments.length - 1];
+        
+        const redirects = {
+            'id': {
+                'portfolio-vinix-en.html': 'portfolio-vinix.html',
+                'portfolio-bskap-en.html': 'portfolio-bskap.html',
+                'portfolio-bulog-en.html': 'portfolio-bulog.html',
+                'portfolio-pertamina-geothermal-en.html': 'portfolio-pertamina-geothermal.html',
+                'portfolio-pertamina-internasional-en.html': 'portfolio-pertamina-internasional.html',
+                'case-study-indigo-en.html': 'case-study-indigo.html',
+                'case-study-minton-en.html': 'case-study-minton.html'
+            },
+            'en': {
+                'portfolio-vinix.html': 'portfolio-vinix-en.html',
+                'portfolio-bskap.html': 'portfolio-bskap-en.html',
+                'portfolio-bulog.html': 'portfolio-bulog-en.html',
+                'portfolio-pertamina-geothermal.html': 'portfolio-pertamina-geothermal-en.html',
+                'portfolio-pertamina-internasional.html': 'portfolio-pertamina-internasional-en.html',
+                'case-study-indigo.html': 'case-study-indigo-en.html',
+                'case-study-minton.html': 'case-study-minton-en.html'
+            }
+        };
+
+        if (redirects[lang] && redirects[lang][pageName]) {
+            window.location.href = redirects[lang][pageName];
+            return;
+        }
 
         if (langId && langEn) {
             if (lang === 'id') {

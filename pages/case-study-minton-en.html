@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minton Case Study | Digital Transformation Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .portfolio-detail {
+            padding-top: 150px;
+        }
+
+        .project-hero {
+            margin-bottom: 4rem;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-primary);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .project-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .meta-item h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item p {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .project-description h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .project-image-full {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+        }
+
+        .project-image-full img {
+            width: 100%;
+            display: block;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .project-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Carousel Styles */
+        .category-section { margin-top: 80px; }
+        .category-section h3 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .carousel-wrapper { position: relative; margin-bottom: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; font-size: 1.2rem; }
+        .carousel-btn:hover { background: var(--accent-primary); color: #fff; border-color: var(--accent-primary); }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+        @media (max-width: 768px) { .carousel-btn { display: none; } }
+        
+        .css-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 1rem; scrollbar-width: none; scroll-behavior: smooth; }
+        .css-carousel::-webkit-scrollbar { display: none; }
+        .css-carousel-item { flex: 0 0 100%; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; background: var(--bg-secondary); }
+        .css-carousel-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
+        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; max-height: 85vh; margin: 0 auto; }
+        @media (max-width: 768px) { .css-carousel-item { flex: 0 0 calc(100% - 2rem); scroll-snap-align: center; } }
+    </style>
+</head>
+
+<body class="portfolio-page">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Portfo<span>lio.</span></a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions" style="position: static; flex-direction: row; display: flex; gap: 1rem; align-items: center;">
+                    <div id="lang-switch" class="lang-switch">
+                        <span id="lang-id">ID</span>
+                        <span class="lang-divider">|</span>
+                        <span id="lang-en" class="active">EN</span>
+                    </div>
+                    <div id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+                <a href="https://diamond123xyz-sys.github.io/Minton-Website/frontend/index.html" target="_blank" class="btn-primary"><i class="fas fa-external-link-alt"></i> View Website</a>
+                <a href="portfolio-vinix-en.html" class="btn-primary-outline"><i class="fas fa-arrow-left"></i> Back to Vinix</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="portfolio-detail section-padding">
+        <div class="container">
+            <div class="project-hero">
+                <div class="project-badge">UI/UX Design Case Study</div>
+                <h1 class="project-title">Minton - Badminton Ecosystem Website</h1>
+                <div class="project-meta-grid">
+                    <div class="meta-item">
+                        <h4>Client / Company</h4>
+                        <p>Minton (via VINIX)</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Role</h4>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Focus</h4>
+                        <p>Ecosystem & Community Platform</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Category</h4>
+                        <p>Web Platform</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-image-full">
+                    <img src="../assets/vinix7/minton.png" alt="Minton Project Design">
+                </div>
+
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>Minton is a badminton ecosystem platform designed to bring the community together, provide court booking services, and facilitate tournament registration. The project aims to create an interface that sparks sports enthusiasm while simplifying administrative processes for both players and court owners.</p>
+                    
+                    <h3>Design Challenge</h3>
+                    <p>The biggest challenge was building a tournament registration and court booking flow that is intuitive for users of various ages. The design also needed to radiate an energetic and dynamic feel typical of sports without compromising the accessibility of the main core functionalities.</p>
+
+                    <h3>Solution & Approach</h3>
+                    <p>Utilizing bold typography and a spacious layout to highlight key features. The booking process is simplified through a step-by-step interface that provides clear visual guidance. The visual design uses sporty elements with an information hierarchy that guides users to their goals quickly.</p>
+
+                    <h3>Technologies Used</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Interaction Design</span>
+                        <span class="tech-tag">Wireframing</span>
+                        <span class="tech-tag">Prototyping</span>
+                        <span class="tech-tag">HTML5 / CSS3</span>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h3>Mockup & Design Showcase</h3>
+                    <div class="carousel-wrapper" style="margin-bottom: 0;">
+                        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="css-carousel">
+                            <div class="css-carousel-item"><img src="../assets/vinix7/mockup_minton_1.png" alt="Minton Mockup 1"></div>
+                            <div class="css-carousel-item"><img src="../assets/vinix7/mockup_minton_2.png" alt="Minton Mockup 2"></div>
+                            <div class="css-carousel-item"><img src="../assets/vinix7/mockup_minton_3.png" alt="Minton Mockup 3"></div>
+                        </div>
+                        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects Exploration -->
+    <section class="other-projects">
+        <div class="container">
+            <h2 class="other-projects-title">Explore Other Projects</h2>
+            <div class="other-projects-grid">
+                <!-- KPI -->
+                <a href="portfolio-pertamina-internasional-en.html" class="other-project-card">
+                    <img src="../assets/pt kpi/hero section.png" alt="KPI" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Visual Communication</span>
+                        <h3>PT Kilang Pertamina Internasional</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- PGE -->
+                <a href="portfolio-pertamina-geothermal-en.html" class="other-project-card">
+                    <img src="../assets/pt pge/hero section.webp" alt="PGE" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Strategic Presentation</span>
+                        <h3>PT Pertamina Geothermal Energy</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+                <!-- BULOG -->
+                <a href="portfolio-bulog-en.html" class="other-project-card">
+                    <img src="../assets/bulog/banner-sphp.webp" alt="BULOG" class="card-bg">
+                    <div class="other-project-content">
+                        <span class="category">Public Branding</span>
+                        <h3>Perum BULOG</h3>
+                        <div class="view-project-link">
+                            See Project <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme initialization
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.body.setAttribute('data-theme', 'light');
+        }
+
+        // Carousel Navigation Script
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const carousel = wrapper.querySelector('.css-carousel');
+            const prevBtn = wrapper.querySelector('.prev');
+            const nextBtn = wrapper.querySelector('.next');
+            
+            if(prevBtn && nextBtn && carousel) {
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
