@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-achievements': 'Pencapaian',
             'nav-contact': 'Hubungi Saya',
             'hero-badge': 'Portofolio Diamond Pandu',
-            'hero-title': 'Dari Imajinasi hingga <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi Realitas Visual yang <span>Memukau.</span>',
+            'hero-title': 'Dari Imajinasi hingga <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi<br> Realitas Visual yang <span>Memukau.</span>',
             'hero-subtitle': 'Saya adalah seorang <strong>Visual Communication & Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk berbagai institusi besar termasuk BUMN dan Kementerian.',
             'hero-btn-exp': 'Lihat Pengalaman <i class="fas fa-arrow-right"></i>',
             'hero-btn-cv': 'Unduh CV <i class="fas fa-download"></i>',
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-achievements': 'Achievements',
             'nav-contact': 'Contact Me',
             'hero-badge': 'Diamond Pandu\'s Portfolio',
-            'hero-title': 'From Imagination to <span>Execution,</span><br> I turn Creative Ideas into Striking Visual <span>Realities.</span>',
+            'hero-title': 'From Imagination to <span>Execution,</span><br> I turn Creative Ideas into<br> Striking Visual <span>Realities.</span>',
             'hero-subtitle': 'I am a <strong>Visual Communication & Digital Transformation Designer</strong> with comprehensive expertise in UI/UX, Front-End Development, and Graphic Design. Experienced in delivering strategic visual solutions for various major institutions including BUMN and Ministries.',
             'hero-btn-exp': 'View Experience <i class="fas fa-arrow-right"></i>',
             'hero-btn-cv': 'Download CV <i class="fas fa-download"></i>',
@@ -516,4 +516,65 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // 8. Certificate Modal Logic
+    const certCards = document.querySelectorAll('.cert-card');
+    const certModal = document.getElementById('certModal');
+    const certModalClose = document.getElementById('certModalClose');
+    const certModalFrame = document.getElementById('certModalFrame');
+
+    if (certCards.length > 0 && certModal && certModalClose && certModalFrame) {
+        certCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const src = card.getAttribute('data-cert-src');
+
+                if (!src) return;
+
+                // Clear previous contents
+                certModalFrame.innerHTML = '';
+
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'cert-modal-img';
+                img.alt = card.querySelector('strong')?.innerText || 'Certificate';
+                certModalFrame.appendChild(img);
+
+                // Open modal
+                certModal.style.display = 'flex';
+                // Force refraction for animations
+                certModal.offsetHeight;
+                certModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Disable page scrolling
+            });
+        });
+
+        // Close modal helper
+        const closeModal = () => {
+            certModal.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable page scrolling
+            setTimeout(() => {
+                certModal.style.display = 'none';
+                certModalFrame.innerHTML = ''; // Clear iframe to stop pdf loading
+            }, 300);
+        };
+
+        certModalClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+
+        // Close on clicking outside the frame
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) {
+                closeModal();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && certModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
