@@ -1072,21 +1072,24 @@ span {
     border-color: var(--accent-primary);
 }
 
+.achieve-header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.25rem;
+}
+
 .achieve-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--accent-glow);
     color: var(--accent-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    flex-shrink: 0;
 }
 
-.achieve-card h3 {
-    margin-bottom: 1.5rem;
+.achieve-header-wrapper h3 {
+    margin: 0;
 }
 
 /* Contact Section */
