@@ -134,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav-contact': 'Hubungi Saya',
             'hero-badge': 'Portofolio Diamond Pandu',
             'hero-title': 'Dari Imajinasi hingga <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi<br> Realitas Visual yang <span>Memukau.</span>',
-            'hero-subtitle': 'Saya adalah seorang <strong>Visual Communication & Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk berbagai institusi besar termasuk BUMN dan Kementerian.',
+            'hero-subtitle': 'Saya adalah seorang <strong>Desainer Komunikasi Visual & Transformasi Digital</strong> dengan keahlian komprehensif di bidang Desain UI/UX, Pemrograman Front-End, serta Desain Grafis. Berpengalaman luas dalam memberikan solusi visual strategis untuk berbagai institusi berskala besar, termasuk Kementerian dan BUMN.',
             'about-header-title': 'Tentang <span>Saya</span>',
-            'about-subtitle': 'Saya adalah seorang <strong>Visual Communication & Digital Transformation Designer</strong> dengan keahlian komprehensif di bidang UI/UX, Front-End Development, dan Desain Grafis. Berpengalaman dalam memberikan solusi visual strategis untuk berbagai institusi besar termasuk BUMN dan Kementerian.',
+            'about-subtitle': 'Saya adalah seorang <strong>Desainer Komunikasi Visual & Transformasi Digital</strong> dengan keahlian komprehensif di bidang Desain UI/UX, Pemrograman Front-End, serta Desain Grafis. Berpengalaman luas dalam memberikan solusi visual strategis untuk berbagai institusi berskala besar, termasuk Kementerian dan BUMN.',
             'hero-btn-exp': 'Lihat Pengalaman <i class="fas fa-arrow-right"></i>',
             'hero-btn-cv': 'Unduh CV <i class="fas fa-download"></i>',
             'hero-trust': 'Berpengalaman memberikan dampak positif di:',
@@ -216,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'ach-org': '<strong>PPK ORMAWA HIMA DKV ISI Surakarta</strong> - Memberikan Workshop Desain & Digital Marketing (2023)',
             'ach-train-1': 'Bootcamp UI/UX Design Special Skill Indonesia (Predikat “Excellent”)',
             'ach-train-2': 'Rakamin PBI – UI/UX Designer Nuri',
-            'ach-train-3': 'Rakamin PBI – UX Researcher Telkom Digital Amoeba',
             'contact-header': 'Mari ciptakan solusi digital <span>berdampak besar</span> bersama.',
             'contact-subtitle': 'Membutuhkan tenaga profesional di bidang desain komunikasi visual atau front-end development? Saya siap berdiskusi untuk membawa nilai tambah bagi perusahaan Anda.',
             'form-name': 'Nama Lengkap / Perusahaan',
@@ -228,7 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-2-location': 'Sulawesi Utara (Remote)',
             'exp-3-location': 'Cilacap, Jawa Tengah',
             'exp-4-location': 'Yogyakarta, Indonesia',
-            'exp-5-location': 'Jakarta, Indonesia'
+            'exp-5-location': 'Jakarta, Indonesia',
+            'footer-desc': 'Desainer Komunikasi Visual & Transformasi Digital',
+            'cv-id': 'Versi Bahasa Indonesia',
+            'cv-en': 'English Version'
         },
         'en': {
             'nav-home': 'Home',
@@ -325,14 +327,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'ach-org': '<strong>PPK ORMAWA HIMA DKV ISI Surakarta</strong> - Provided Design & Digital Marketing Workshops (2023)',
             'ach-train-1': 'Bootcamp UI/UX Design Special Skill Indonesia (Graduated with "Excellent" Rating)',
             'ach-train-2': 'Rakamin PBI – UI/UX Designer Nuri',
-            'ach-train-3': 'Rakamin PBI – UX Researcher Telkom Digital Amoeba',
             'contact-header': 'Let\'s create <span>impactful</span> digital solutions together.',
             'contact-subtitle': 'Need professional services in visual communication design or front-end development? I am ready to discuss bringing added value to your company.',
             'form-name': 'Full Name / Company',
             'form-email': 'Professional Email',
             'form-message': 'Project Details / Offer',
             'form-btn': 'Send Message <i class="fas fa-paper-plane"></i>',
-            'exp-btn-portfolio': 'View Portfolio <i class="fas fa-external-link-alt"></i>'
+            'exp-btn-portfolio': 'View Portfolio <i class="fas fa-external-link-alt"></i>',
+            'footer-desc': 'Visual Communication & Digital Transformation Designer',
+            'cv-id': 'Indonesian Version',
+            'cv-en': 'English Version'
         }
     };
 
@@ -621,6 +625,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && certModal.classList.contains('active')) {
                 closeModal();
+            }
+        });
+    }
+
+    // CV Dropdown Logic
+    const cvBtn = document.querySelector('.cv-dropdown-btn');
+    const cvDropdown = document.getElementById('cvDropdown');
+
+    if (cvBtn && cvDropdown) {
+        cvBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cvDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!cvBtn.contains(e.target) && !cvDropdown.contains(e.target)) {
+                cvDropdown.classList.remove('show');
             }
         });
     }

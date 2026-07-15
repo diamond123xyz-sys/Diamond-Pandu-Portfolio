@@ -205,6 +205,54 @@ span {
     transform: translateY(-2px);
 }
 
+.cv-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-tertiary);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 100;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cv-dropdown-content.show {
+    display: block;
+    animation: fadeInDropdown 0.3s forwards;
+}
+
+@keyframes fadeInDropdown {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.cv-dropdown-content a {
+    color: var(--text-primary);
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cv-dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.cv-dropdown-content a:hover {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
 .w-100 {
     width: 100%;
     justify-content: center;
@@ -498,6 +546,18 @@ span {
     display: none;
 }
 
+/* Dark mode (default) inverts black text logos to white */
+.cert-icon.efset img, 
+.cert-icon.toefl img {
+    filter: brightness(0) invert(1);
+}
+
+/* Light mode keeps them in original color (black) */
+[data-theme="light"] .cert-icon.efset img, 
+[data-theme="light"] .cert-icon.toefl img {
+    filter: none;
+}
+
 .trust-logo.vinix-logo {
     filter: brightness(0) invert(1) opacity(0.6);
 }
@@ -740,8 +800,8 @@ span {
 }
 
 .exp-item.active .exp-details {
-    max-height: 500px;
-    /* Adjust as needed */
+    max-height: 2000px;
+    /* Expanded max-height to ensure view portfolio buttons are not truncated on mobile screens */
 }
 
 .details-inner {
@@ -1381,12 +1441,34 @@ footer {
     }
 
     .exp-summary {
-        gap: 1rem;
-        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.8rem;
+        padding: 1.5rem 1.25rem;
+        align-items: center;
+    }
+    
+    .company-logo {
+        grid-column: 1 / -1;
+        width: 55px;
+        height: 55px;
+    }
+
+    .exp-info {
+        grid-column: 1;
+    }
+
+    .exp-toggle {
+        grid-column: 2;
+    }
+
+    .exp-info h3 {
+        font-size: 1.05rem;
+        line-height: 1.3;
     }
 
     .details-inner {
-        padding-left: 1.5rem;
+        padding: 0 1.25rem 1.75rem 1.25rem;
     }
 }
 

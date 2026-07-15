@@ -72,7 +72,8 @@
                 style="max-width: 1000px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 60px;">
                 <div class="badge" data-i18n="hero-badge">Portofolio Diamond Pandu</div>
                 <h1 class="hero-title" data-i18n="hero-title" style="margin-bottom: 2rem;">Dari Imajinasi hingga
-                    <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi<br> Realitas Visual yang <span>Memukau.</span>
+                    <span>Eksekusi,</span><br> Mengubah Ide Kreatif menjadi<br> Realitas Visual yang
+                    <span>Memukau.</span>
                 </h1>
                 <div class="trust-indicators" style="margin-top: 3.5rem;">
                     <p data-i18n="hero-trust">Berpengalaman memberikan dampak positif di:</p>
@@ -126,8 +127,14 @@
                 <div class="hero-actions" style="margin-top: 2rem; margin-bottom: 0;">
                     <a href="#experience" class="btn-primary" data-i18n="hero-btn-exp">Lihat Pengalaman <i
                             class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn-secondary" data-i18n="hero-btn-cv">Unduh CV <i
-                            class="fas fa-download"></i></a>
+                    <div class="cv-dropdown-wrapper" style="position: relative; display: inline-flex;">
+                        <a href="javascript:void(0)" class="btn-secondary cv-dropdown-btn" data-i18n="hero-btn-cv">Unduh
+                            CV <i class="fas fa-download"></i></a>
+                        <div class="cv-dropdown-content" id="cvDropdown">
+                            <a href="#" target="_blank" data-i18n="cv-id">Versi Bahasa Indonesia</a>
+                            <a href="#" target="_blank" data-i18n="cv-en">English Version</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,10 +182,18 @@
                     <div class="exp-details">
                         <div class="details-inner">
                             <ul>
-                                <li data-i18n="exp-1-bullet-1">Merancang dan mengembangkan UI/UX serta Front-End untuk platform <strong>Indigo by Telkom – AI Synergy & Risk Engine</strong>, sebuah dashboard analitik risiko berbasis AI yang di-deploy live di Vercel.</li>
-                                <li data-i18n="exp-1-bullet-2">Mendesain antarmuka dan membangun Front-End website <strong>Minton – Badminton Ecosystem Platform</strong>, mencakup fitur <em>booking</em> lapangan, pendaftaran turnamen, dan komunitas pemain.</li>
-                                <li data-i18n="exp-1-bullet-3">Menerapkan metodologi <em>design thinking</em> end-to-end: riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em> di Figma, dan pengujian iteratif untuk validasi setiap keputusan desain.</li>
-                                <li data-i18n="exp-1-bullet-4">Mengembangkan antarmuka web responsif menggunakan HTML, CSS, dan JavaScript murni, memastikan performa optimal dan kompatibilitas lintas perangkat.</li>
+                                <li data-i18n="exp-1-bullet-1">Merancang dan mengembangkan UI/UX serta Front-End untuk
+                                    platform <strong>Indigo by Telkom – AI Synergy & Risk Engine</strong>, sebuah
+                                    dashboard analitik risiko berbasis AI yang di-deploy live di Vercel.</li>
+                                <li data-i18n="exp-1-bullet-2">Mendesain antarmuka dan membangun Front-End website
+                                    <strong>Minton – Badminton Ecosystem Platform</strong>, mencakup fitur
+                                    <em>booking</em> lapangan, pendaftaran turnamen, dan komunitas pemain.</li>
+                                <li data-i18n="exp-1-bullet-3">Menerapkan metodologi <em>design thinking</em>
+                                    end-to-end: riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em>
+                                    di Figma, dan pengujian iteratif untuk validasi setiap keputusan desain.</li>
+                                <li data-i18n="exp-1-bullet-4">Mengembangkan antarmuka web responsif menggunakan HTML,
+                                    CSS, dan JavaScript murni, memastikan performa optimal dan kompatibilitas lintas
+                                    perangkat.</li>
                             </ul>
                             <a href="pages/portfolio-vinix.html" class="btn-portfolio"
                                 data-i18n="exp-btn-portfolio">Lihat
@@ -215,9 +230,15 @@
                     <div class="exp-details">
                         <div class="details-inner">
                             <ul>
-                                <li data-i18n="exp-2-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja lingkungan oleh Kementerian LHK RI.</li>
-                                <li data-i18n="exp-2-bullet-2">Mengembangkan konsep visual bertema inovasi sosial dan energi hijau, dengan palet warna khusus (hijau-kuning-putih) yang merepresentasikan ekosistem panas bumi dan pemberdayaan masyarakat petani binaan.</li>
-                                <li data-i18n="exp-2-bullet-3">Berhasil menyajikan data kinerja lingkungan kompleks menjadi infografis yang komunikatif, mendukung pencapaian perusahaan meraih predikat <strong>PROPER Hijau</strong> dari Kementerian LHK.</li>
+                                <li data-i18n="exp-2-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT
+                                    Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja lingkungan
+                                    oleh Kementerian LHK RI.</li>
+                                <li data-i18n="exp-2-bullet-2">Mengembangkan konsep visual bertema inovasi sosial dan
+                                    energi hijau, dengan palet warna khusus (hijau-kuning-putih) yang merepresentasikan
+                                    ekosistem panas bumi dan pemberdayaan masyarakat petani binaan.</li>
+                                <li data-i18n="exp-2-bullet-3">Berhasil menyajikan data kinerja lingkungan kompleks
+                                    menjadi infografis yang komunikatif, mendukung pencapaian perusahaan meraih predikat
+                                    <strong>PROPER Hijau</strong> dari Kementerian LHK.</li>
                             </ul>
                             <a href="pages/portfolio-pertamina-geothermal.html" class="btn-portfolio"
                                 data-i18n="exp-btn-portfolio">Lihat Portofolio <i
@@ -253,9 +274,15 @@
                     <div class="exp-details">
                         <div class="details-inner">
                             <ul>
-                                <li data-i18n="exp-3-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT Kilang Pertamina Internasional RU IV Cilacap, bekerja secara hybrid di kantor maupun remote.</li>
-                                <li data-i18n="exp-3-bullet-2">Menerapkan pendekatan visual data-driven dengan infografis yang menggambarkan dampak pengelolaan limbah, emisi, hingga program CSR perusahaan secara terukur.</li>
-                                <li data-i18n="exp-3-bullet-3">Mendukung keberhasilan perusahaan meraih predikat <strong>PROPER EMAS</strong> dari Kementerian LHK melalui penyajian visual yang profesional dan strategis.</li>
+                                <li data-i18n="exp-3-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT
+                                    Kilang Pertamina Internasional RU IV Cilacap, bekerja secara hybrid di kantor maupun
+                                    remote.</li>
+                                <li data-i18n="exp-3-bullet-2">Menerapkan pendekatan visual data-driven dengan
+                                    infografis yang menggambarkan dampak pengelolaan limbah, emisi, hingga program CSR
+                                    perusahaan secara terukur.</li>
+                                <li data-i18n="exp-3-bullet-3">Mendukung keberhasilan perusahaan meraih predikat
+                                    <strong>PROPER EMAS</strong> dari Kementerian LHK melalui penyajian visual yang
+                                    profesional dan strategis.</li>
                             </ul>
                             <a href="pages/portfolio-pertamina-internasional.html" class="btn-portfolio"
                                 data-i18n="exp-btn-portfolio">Lihat Portofolio <i
@@ -289,10 +316,17 @@
                     <div class="exp-details">
                         <div class="details-inner">
                             <ul>
-                                <li data-i18n="exp-4-bullet-1">Mendesain 50+ aset visual untuk kampanye digital & non-digital sesuai visual guideline perusahaan, mencakup konten media sosial, banner, poster, dan motion graphic.</li>
-                                <li data-i18n="exp-4-bullet-2">Memproduksi 2 video motion graphic untuk kampanye Instagram Reels: "Beras untuk Generasi Emas" dan "Packaging Baru Setra Ramos" yang menargetkan audiens millennial.</li>
-                                <li data-i18n="exp-4-bullet-3">Mengoptimasi desain media cetak (poster SPHP, banner beras ramos, poster K3) untuk kebutuhan komunikasi Bagian Marketing Communication dan Hubungan Masyarakat.</li>
-                                <li data-i18n="exp-4-bullet-4"><em>Pencapaian: Sertifikat Magenta BUMN dengan Nilai A (Sangat Memuaskan).</em></li>
+                                <li data-i18n="exp-4-bullet-1">Mendesain 50+ aset visual untuk kampanye digital &
+                                    non-digital sesuai visual guideline perusahaan, mencakup konten media sosial,
+                                    banner, poster, dan motion graphic.</li>
+                                <li data-i18n="exp-4-bullet-2">Memproduksi 2 video motion graphic untuk kampanye
+                                    Instagram Reels: "Beras untuk Generasi Emas" dan "Packaging Baru Setra Ramos" yang
+                                    menargetkan audiens millennial.</li>
+                                <li data-i18n="exp-4-bullet-3">Mengoptimasi desain media cetak (poster SPHP, banner
+                                    beras ramos, poster K3) untuk kebutuhan komunikasi Bagian Marketing Communication
+                                    dan Hubungan Masyarakat.</li>
+                                <li data-i18n="exp-4-bullet-4"><em>Pencapaian: Sertifikat Magenta BUMN dengan Nilai A
+                                        (Sangat Memuaskan).</em></li>
                             </ul>
                             <a href="pages/portfolio-bulog.html" class="btn-portfolio"
                                 data-i18n="exp-btn-portfolio">Lihat
@@ -327,10 +361,17 @@
                     <div class="exp-details">
                         <div class="details-inner">
                             <ul>
-                                <li data-i18n="exp-5-bullet-1">Mendesain sistem identitas visual berupa maskot & branding elements untuk Program Nasional Pusat Perbukuan, dan <strong>meraih Juara 1</strong> dalam kompetisi Desain Maskot & Branding BSKAP 2024.</li>
-                                <li data-i18n="exp-5-bullet-2">Mendesain Buku Pedoman ZI-WBK | WBBM BSKAP 2024 (60+ halaman) dengan tata letak yang informatif dan konsisten dengan identitas lembaga.</li>
-                                <li data-i18n="exp-5-bullet-3">Membuat ilustrasi Buku Non-Teks Komik Jenjang E untuk Kampanye Anti-Bullying, menerjemahkan pesan edukasi ke dalam visual yang menarik bagi pembaca anak.</li>
-                                <li data-i18n="exp-5-bullet-4">Berkolaborasi dengan divisi humas dalam perancangan aset konten media sosial resmi BSKAP Kemendikbudristek.</li>
+                                <li data-i18n="exp-5-bullet-1">Mendesain sistem identitas visual berupa maskot &
+                                    branding elements untuk Program Nasional Pusat Perbukuan, dan <strong>meraih Juara
+                                        1</strong> dalam kompetisi Desain Maskot & Branding BSKAP 2024.</li>
+                                <li data-i18n="exp-5-bullet-2">Mendesain Buku Pedoman ZI-WBK | WBBM BSKAP 2024 (60+
+                                    halaman) dengan tata letak yang informatif dan konsisten dengan identitas lembaga.
+                                </li>
+                                <li data-i18n="exp-5-bullet-3">Membuat ilustrasi Buku Non-Teks Komik Jenjang E untuk
+                                    Kampanye Anti-Bullying, menerjemahkan pesan edukasi ke dalam visual yang menarik
+                                    bagi pembaca anak.</li>
+                                <li data-i18n="exp-5-bullet-4">Berkolaborasi dengan divisi humas dalam perancangan aset
+                                    konten media sosial resmi BSKAP Kemendikbudristek.</li>
                             </ul>
                             <a href="pages/portfolio-bskap.html" class="btn-portfolio"
                                 data-i18n="exp-btn-portfolio">Lihat
@@ -418,12 +459,11 @@
                                     <span data-i18n="cert-2-desc">UX Design Professional</span>
                                 </div>
                             </div>
-                            <div class="cert-card"
-                                data-cert-src="assets/img/EFSET C2_page-0001.jpg"
+                            <div class="cert-card" data-cert-src="assets/img/EFSET C2_page-0001.jpg"
                                 data-cert-type="image"
                                 style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
                                 <div class="cert-icon efset"
-                                    style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 8px; padding: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0;">
+                                    style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: transparent; padding: 0; box-shadow: none; flex-shrink: 0;">
                                     <img src="assets/img/efset.png" alt="EFSET English"
                                         style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 </div>
@@ -438,7 +478,7 @@
                                 data-cert-type="image"
                                 style="background: var(--bg-secondary); border: none; display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 8px;">
                                 <div class="cert-icon toefl"
-                                    style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 8px; padding: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-shrink: 0;">
+                                    style="width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: transparent; padding: 0; box-shadow: none; flex-shrink: 0;">
                                     <img src="assets/img/toefl.png" alt="TOEFL ITP"
                                         style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 </div>
@@ -589,7 +629,6 @@
                         <li data-i18n="ach-train-1">Bootcamp UI/UX Design Special Skill Indonesia (Predikat “Excellent”)
                         </li>
                         <li data-i18n="ach-train-2">Rakamin PBI – UI/UX Designer Nuri</li>
-                        <li data-i18n="ach-train-3">Rakamin PBI – UX Researcher Telkom Digital Amoeba</li>
                     </ul>
                 </div>
             </div>
@@ -622,7 +661,7 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="#" class="logo">Portfo<span>lio.</span></a>
-                <p>Visual Communication & Digital Transformation Designer</p>
+                <p data-i18n="footer-desc">Visual Communication & Digital Transformation Designer</p>
             </div>
             <div class="footer-social">
                 <a href="https://www.linkedin.com/in/diamondpandu/" target="_blank"><i
