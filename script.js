@@ -57,11 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let skillIndex = 0;
         let logIndex = 0;
 
+        let forcedComplete = false;
+        setTimeout(() => {
+            targetProgress = 100;
+            forcedComplete = true;
+        }, 3500); // Max 3.5 seconds loading screen
+
         const lerpProgress = setInterval(() => {
-            if (currentProgress < targetProgress) currentProgress += 1;
+            if (currentProgress < targetProgress) {
+                currentProgress += 2;
+            }
             
-            if(currentProgress < 100 && targetProgress === currentProgress) {
-                 currentProgress += Math.random() > 0.5 ? 1 : 0; 
+            // Allow artificial loading even if targetProgress is lagging behind
+            if(currentProgress < 95 && currentProgress >= targetProgress && !forcedComplete) {
+                 currentProgress += Math.random() > 0.4 ? 1 : 0; 
             }
 
             if (currentProgress > 100) currentProgress = 100;
@@ -108,21 +117,31 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflowY = "visible";
     }
 
-    // Experience Toggle Logic
-    const expItems = document.querySelectorAll('.exp-item');
-    expItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+    // Timeline Toggle Logic
+    const timelineNodes = document.querySelectorAll('.timeline-node');
+    const timelineDetails = document.querySelectorAll('.timeline-detail-content');
 
-            // Close all items
-            expItems.forEach(i => i.classList.remove('active'));
+    timelineNodes.forEach(node => {
+        node.addEventListener('click', () => {
+            // Remove active from all
+            timelineNodes.forEach(n => n.classList.remove('active'));
+            timelineDetails.forEach(d => d.classList.remove('active'));
 
-            // If the clicked item wasn't active, open it
-            if (!isActive) {
-                item.classList.add('active');
+            // Add active to current
+            node.classList.add('active');
+            const targetId = node.getAttribute('data-target');
+            const targetDetail = document.getElementById(targetId);
+            if (targetDetail) {
+                targetDetail.classList.add('active');
+            }
+            
+            // Scroll detail into view elegantly on mobile
+            if (window.innerWidth <= 768) {
+                document.querySelector('.timeline-details-display').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         });
     });
+
 
     // Translation Data
     const translations = {
@@ -230,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-5-location': 'Jakarta, Indonesia',
             'footer-desc': 'Desainer Komunikasi Visual & Transformasi Digital',
             'cv-id': 'Versi Bahasa Indonesia',
-            'cv-en': 'English Version'
+            'cv-en': 'English Version',
+            'show-detail': 'Lihat Detail Pekerjaan'
         },
         'en': {
             'nav-home': 'Home',
@@ -336,7 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-btn-portfolio': 'View Portfolio <i class="fas fa-external-link-alt"></i>',
             'footer-desc': 'Visual Communication & Digital Transformation Designer',
             'cv-id': 'Indonesian Version',
-            'cv-en': 'English Version'
+            'cv-en': 'English Version',
+            'show-detail': 'View Job Details'
         }
     };
 
@@ -546,27 +567,36 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease-out';
         revealOnScroll.observe(el);
     });
-    // Experience Filtering
+    // Experience Filtering (Timeline Edition)
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const timelineNodesFilter = document.querySelectorAll('.timeline-node');
+    const timelineDetailsFilter = document.querySelectorAll('.timeline-detail-content');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active button
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-            const filter = btn.getAttribute('data-filter');
+                const filter = btn.getAttribute('data-filter');
 
-            expItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.classList.remove('hide');
-                    item.style.animation = 'fadeInUp 0.5s ease forwards';
+                timelineNodesFilter.forEach(node => {
+                    if (filter === 'all' || node.getAttribute('data-category') === filter) {
+                        node.style.display = 'flex';
+                    } else {
+                        node.style.display = 'none';
+                    }
+                });
+
+                const firstVisibleNode = Array.from(timelineNodesFilter).find(n => n.style.display !== 'none');
+                if (firstVisibleNode) {
+                    firstVisibleNode.click();
                 } else {
-                    item.classList.add('hide');
+                    timelineDetailsFilter.forEach(d => d.classList.remove('active'));
                 }
             });
         });
-    });
+    }
 
     // 8. Certificate Modal Logic
     const certCards = document.querySelectorAll('.cert-card');

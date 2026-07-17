@@ -109,9 +109,29 @@
     <section id="about" class="about section-padding" style="background-color: var(--bg-secondary);">
         <div class="container about-container">
             <div class="hero-visual">
-                <div class="hero-profile-container">
-                    <div class="profile-img-wrapper">
-                        <img src="assets/img/Foto Diri.png" alt="Profile Photo">
+                <div class="id-card-container">
+                    <!-- Lanyard Strings & Clip -->
+                    <div class="lanyard">
+                        <div class="string string-left"></div>
+                        <div class="string string-right"></div>
+                        <div class="clip"></div>
+                    </div>
+                    
+                    <!-- Swinging ID Card -->
+                    <div class="id-card">
+                        <div class="id-card-hole"></div>
+                        <div class="id-card-header">
+                            <span>OPEN FOR OPPORTUNITY</span>
+                        </div>
+                        <div class="id-card-photo">
+                            <img src="assets/img/Foto Diri.png" alt="Profile Photo">
+                        </div>
+                        <div class="id-card-body">
+                            <h2>Diamond Pandu</h2>
+                            <p>Visual & UI/UX</p>
+                            <!-- Mock Barcode -->
+                            <div class="id-barcode"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,230 +174,236 @@
                 <button class="filter-btn" data-filter="digital">Digital Transformation</button>
                 <button class="filter-btn" data-filter="visual">Visual Communication</button>
             </div>
-            <div class="experience-list">
-                <!-- Exp 1 -->
-                <div class="exp-item glass-effect" data-category="digital">
-                    <div class="exp-summary">
-                        <div class="company-logo">
-                            <img src="assets/img/vinix.png" alt="PT VINIX Seven Aurum Logo"
-                                class="logo-light vinix-logo">
-                            <img src="assets/img/vinix.png" alt="PT VINIX Seven Aurum Logo"
-                                class="logo-dark vinix-logo">
-                        </div>
-                        <div class="exp-info">
-                            <h3 data-i18n="exp-1-role">Front-End Web Developer & UI/UX Designer (Internship)</h3>
-                            <div class="exp-meta">
-                                <span class="company-name">PT VINIX Seven Aurum</span>
-                                <span class="dot">•</span>
-                                <span class="timeline-date" data-i18n="exp-1-date">Februari 2026 – Juli 2026</span>
-                                <span class="dot">•</span>
-                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
-                                        data-i18n="exp-1-location">Yogyakarta, Indonesia</span></span>
+            <div class="experience-timeline-wrapper">
+                <!-- Timeline Track (Horizontal Scroll) -->
+                <div class="timeline-track-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-nodes">
+                        
+                        <!-- Timeline Node 1 -->
+                        <div class="timeline-node active" data-category="digital" data-target="detail-exp1">
+                            <div class="tl-date-top" data-i18n="exp-1-date">Feb 2026 – Jul 2026</div>
+                            <div class="timeline-point"></div>
+                            <div class="timeline-card glass-effect">
+                                <div class="tl-info">
+                                    <div class="tl-company">
+                                        <div class="tl-logo">
+                                            <img src="assets/img/vinix.png" class="logo-light vinix-logo">
+                                            <img src="assets/img/vinix.png" class="logo-dark vinix-logo">
+                                        </div>
+                                        <span>PT VINIX Seven Aurum</span>
+                                    </div>
+                                    <h4 data-i18n="exp-1-role">Front-End Web Developer & UI/UX Designer</h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="exp-toggle">
-                            <i class="fas fa-chevron-down"></i>
+
+                        <!-- Timeline Node 2 -->
+                        <div class="timeline-node" data-category="visual" data-target="detail-exp2">
+                            <div class="tl-date-top" data-i18n="exp-2-date">Des 2025 – Jan 2026</div>
+                            <div class="timeline-point"></div>
+                            <div class="timeline-card glass-effect">
+                                <div class="tl-info">
+                                    <div class="tl-company">
+                                        <div class="tl-logo">
+                                            <img src="assets/img/pertamina geothermal.png" class="logo-light">
+                                            <img src="assets/img/pertamina geothermal putih.png" class="logo-dark">
+                                        </div>
+                                        <span>PT Pertamina Geothermal Energy</span>
+                                    </div>
+                                    <h4 data-i18n="exp-2-role">Graphic Designer (Freelance)</h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="exp-details">
-                        <div class="details-inner">
-                            <ul>
-                                <li data-i18n="exp-1-bullet-1">Merancang dan mengembangkan UI/UX serta Front-End untuk
-                                    platform <strong>Indigo by Telkom – AI Synergy & Risk Engine</strong>, sebuah
-                                    dashboard analitik risiko berbasis AI yang di-deploy live di Vercel.</li>
-                                <li data-i18n="exp-1-bullet-2">Mendesain antarmuka dan membangun Front-End website
-                                    <strong>Minton – Badminton Ecosystem Platform</strong>, mencakup fitur
-                                    <em>booking</em> lapangan, pendaftaran turnamen, dan komunitas pemain.</li>
-                                <li data-i18n="exp-1-bullet-3">Menerapkan metodologi <em>design thinking</em>
-                                    end-to-end: riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em>
-                                    di Figma, dan pengujian iteratif untuk validasi setiap keputusan desain.</li>
-                                <li data-i18n="exp-1-bullet-4">Mengembangkan antarmuka web responsif menggunakan HTML,
-                                    CSS, dan JavaScript murni, memastikan performa optimal dan kompatibilitas lintas
-                                    perangkat.</li>
-                            </ul>
-                            <a href="pages/portfolio-vinix.html" class="btn-portfolio"
-                                data-i18n="exp-btn-portfolio">Lihat
-                                Portofolio <i class="fas fa-external-link-alt"></i></a>
+
+                        <!-- Timeline Node 3 -->
+                        <div class="timeline-node" data-category="visual" data-target="detail-exp3">
+                            <div class="tl-date-top" data-i18n="exp-3-date">Nov 2025 – Jan 2026</div>
+                            <div class="timeline-point"></div>
+                            <div class="timeline-card glass-effect">
+                                <div class="tl-info">
+                                    <div class="tl-company">
+                                        <div class="tl-logo">
+                                            <img src="assets/img/PT Kilang Pertamina Internasional.svg" class="logo-light">
+                                            <img src="assets/img/PT Kilang Pertamina Internasional Putih.png" class="logo-dark">
+                                        </div>
+                                        <span>PT Kilang Pertamina Internasional</span>
+                                    </div>
+                                    <h4 data-i18n="exp-3-role">Graphic Designer (Hybrid)</h4>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Timeline Node 4 -->
+                        <div class="timeline-node" data-category="visual" data-target="detail-exp4">
+                            <div class="tl-date-top" data-i18n="exp-4-date">Feb 2025 – Sep 2025</div>
+                            <div class="timeline-point"></div>
+                            <div class="timeline-card glass-effect">
+                                <div class="tl-info">
+                                    <div class="tl-company">
+                                        <div class="tl-logo">
+                                            <img src="assets/img/bulog.png" class="logo-light">
+                                            <img src="assets/img/BULOG Putih-8 1.png" class="logo-dark">
+                                        </div>
+                                        <span>Perum BULOG</span>
+                                    </div>
+                                    <h4 data-i18n="exp-4-role">Multimedia Designer (Intern)</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Node 5 -->
+                        <div class="timeline-node" data-category="visual" data-target="detail-exp5">
+                            <div class="tl-date-top" data-i18n="exp-5-date">Sep 2024 – Des 2024</div>
+                            <div class="timeline-point"></div>
+                            <div class="timeline-card glass-effect">
+                                <div class="tl-info">
+                                    <div class="tl-company">
+                                        <div class="tl-logo">
+                                            <img src="assets/img/Logo Kemendikbud.png" class="logo-light">
+                                            <img src="assets/img/bskap putih.png" class="logo-dark">
+                                        </div>
+                                        <span>BSKAP Kemendikbudristek</span>
+                                    </div>
+                                    <h4 data-i18n="exp-5-role">Graphic Designer (MSIB)</h4>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Exp 2 -->
-                <div class="exp-item glass-effect" data-category="visual">
-                    <div class="exp-summary">
-                        <div class="company-logo">
-                            <img src="assets/img/pertamina geothermal.png" alt="PT Pertamina Geothermal Energy Logo"
-                                class="logo-light">
-                            <img src="assets/img/pertamina geothermal putih.png"
-                                alt="PT Pertamina Geothermal Energy Logo" class="logo-dark">
-                        </div>
-                        <div class="exp-info">
-                            <h3 data-i18n="exp-2-role">Graphic Designer (Remote Freelance Project)</h3>
-                            <div class="exp-meta">
-                                <span class="company-name">PT Pertamina Geothermal Energy Tbk (Via Yosae Karya
-                                    Indonesia)</span>
-                                <span class="dot">•</span>
-                                <span class="timeline-date" data-i18n="exp-2-date">Desember 2025 – Januari 2026</span>
-                                <span class="dot">•</span>
-                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
-                                        data-i18n="exp-2-location">Sulawesi Utara (Remote)</span></span>
+                <!-- Detail Display Panel -->
+                <div class="timeline-details-display glass-effect">
+                    
+                    <!-- Detail 1 -->
+                    <div class="timeline-detail-content active" id="detail-exp1">
+                        <div class="detail-split-layout">
+                            <div class="detail-visual-col">
+                                <img src="assets/vinix7/minton.png" alt="Minton Project" class="detail-img">
+                                <img src="assets/vinix7/indigo.png" alt="Indigo Project" class="detail-img">
+                            </div>
+                            <div class="detail-text-col">
+                                <div class="detail-header">
+                                    <div class="detail-title">
+                                        <h3 class="detail-company">PT VINIX Seven Aurum</h3>
+                                        <h4 class="detail-role" data-i18n="exp-1-role">Front-End Web Developer & UI/UX Designer (Internship)</h4>
+                                        <p class="location-text"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp-1-location">Yogyakarta, Indonesia</span></p>
+                                    </div>
+                                </div>
+                                <ul class="detail-bullets">
+                                    <li data-i18n="exp-1-bullet-1">Merancang dan mengembangkan UI/UX serta Front-End untuk platform <strong>Indigo by Telkom – AI Synergy & Risk Engine</strong>, sebuah dashboard analitik risiko berbasis AI yang di-deploy live di Vercel.</li>
+                                    <li data-i18n="exp-1-bullet-2">Mendesain antarmuka dan membangun Front-End website <strong>Minton – Badminton Ecosystem Platform</strong>, mencakup fitur <em>booking</em> lapangan, pendaftaran turnamen, dan komunitas pemain.</li>
+                                    <li data-i18n="exp-1-bullet-3">Menerapkan metodologi <em>design thinking</em> end-to-end: riset pengguna, <em>wireframing</em>, <em>high-fidelity prototyping</em> di Figma, dan pengujian iteratif untuk validasi setiap keputusan desain.</li>
+                                    <li data-i18n="exp-1-bullet-4">Mengembangkan antarmuka web responsif menggunakan HTML, CSS, dan JavaScript murni, memastikan performa optimal dan kompatibilitas lintas perangkat.</li>
+                                </ul>
+                                <a href="pages/portfolio-vinix.html" class="btn-portfolio" data-i18n="exp-btn-portfolio">Lihat Portofolio <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <div class="exp-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
                     </div>
-                    <div class="exp-details">
-                        <div class="details-inner">
-                            <ul>
-                                <li data-i18n="exp-2-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT
-                                    Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja lingkungan
-                                    oleh Kementerian LHK RI.</li>
-                                <li data-i18n="exp-2-bullet-2">Mengembangkan konsep visual bertema inovasi sosial dan
-                                    energi hijau, dengan palet warna khusus (hijau-kuning-putih) yang merepresentasikan
-                                    ekosistem panas bumi dan pemberdayaan masyarakat petani binaan.</li>
-                                <li data-i18n="exp-2-bullet-3">Berhasil menyajikan data kinerja lingkungan kompleks
-                                    menjadi infografis yang komunikatif, mendukung pencapaian perusahaan meraih predikat
-                                    <strong>PROPER Hijau</strong> dari Kementerian LHK.</li>
-                            </ul>
-                            <a href="pages/portfolio-pertamina-geothermal.html" class="btn-portfolio"
-                                data-i18n="exp-btn-portfolio">Lihat Portofolio <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Exp 3 -->
-                <div class="exp-item glass-effect" data-category="visual">
-                    <div class="exp-summary">
-                        <div class="company-logo">
-                            <img src="assets/img/PT Kilang Pertamina Internasional.svg"
-                                alt="PT Kilang Pertamina Internasional Logo" class="logo-light">
-                            <img src="assets/img/PT Kilang Pertamina Internasional Putih.png"
-                                alt="PT Kilang Pertamina Internasional Logo" class="logo-dark">
-                        </div>
-                        <div class="exp-info">
-                            <h3 data-i18n="exp-3-role">Graphic Designer (Hybrid Contract Worker)</h3>
-                            <div class="exp-meta">
-                                <span class="company-name">PT Kilang Pertamina Internasional</span>
-                                <span class="dot">•</span>
-                                <span class="timeline-date" data-i18n="exp-3-date">November 2025 – Januari 2026</span>
-                                <span class="dot">•</span>
-                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
-                                        data-i18n="exp-3-location">Cilacap, Jawa Tengah</span></span>
+                    <!-- Detail 2 -->
+                    <div class="timeline-detail-content" id="detail-exp2">
+                        <div class="detail-split-layout">
+                            <div class="detail-visual-col">
+                                <img src="assets/pt pge/hero section.webp" alt="PGE Project" class="detail-img">
+                                <img src="assets/pt pge/4.png" alt="PGE Presentation" class="detail-img">
+                            </div>
+                            <div class="detail-text-col">
+                                <div class="detail-header">
+                                    <div class="detail-title">
+                                        <h3 class="detail-company">PT Pertamina Geothermal Energy Tbk</h3>
+                                        <h4 class="detail-role" data-i18n="exp-2-role">Graphic Designer (Remote Freelance Project)</h4>
+                                        <p class="location-text"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp-2-location">Sulawesi Utara (Remote)</span></p>
+                                    </div>
+                                </div>
+                                <ul class="detail-bullets">
+                                    <li data-i18n="exp-2-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT Pertamina Geothermal Energy Tbk Area Lahendong untuk penilaian kinerja lingkungan oleh Kementerian LHK RI.</li>
+                                    <li data-i18n="exp-2-bullet-2">Mengembangkan konsep visual bertema inovasi sosial dan energi hijau, dengan palet warna khusus (hijau-kuning-putih) yang merepresentasikan ekosistem panas bumi dan pemberdayaan masyarakat petani binaan.</li>
+                                    <li data-i18n="exp-2-bullet-3">Berhasil menyajikan data kinerja lingkungan kompleks menjadi infografis yang komunikatif, mendukung pencapaian perusahaan meraih predikat <strong>PROPER Hijau</strong> dari Kementerian LHK.</li>
+                                </ul>
+                                <a href="pages/portfolio-pertamina-geothermal.html" class="btn-portfolio" data-i18n="exp-btn-portfolio">Lihat Portofolio <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <div class="exp-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
                     </div>
-                    <div class="exp-details">
-                        <div class="details-inner">
-                            <ul>
-                                <li data-i18n="exp-3-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT
-                                    Kilang Pertamina Internasional RU IV Cilacap, bekerja secara hybrid di kantor maupun
-                                    remote.</li>
-                                <li data-i18n="exp-3-bullet-2">Menerapkan pendekatan visual data-driven dengan
-                                    infografis yang menggambarkan dampak pengelolaan limbah, emisi, hingga program CSR
-                                    perusahaan secara terukur.</li>
-                                <li data-i18n="exp-3-bullet-3">Mendukung keberhasilan perusahaan meraih predikat
-                                    <strong>PROPER EMAS</strong> dari Kementerian LHK melalui penyajian visual yang
-                                    profesional dan strategis.</li>
-                            </ul>
-                            <a href="pages/portfolio-pertamina-internasional.html" class="btn-portfolio"
-                                data-i18n="exp-btn-portfolio">Lihat Portofolio <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Exp 4 -->
-                <div class="exp-item glass-effect" data-category="visual">
-                    <div class="exp-summary">
-                        <div class="company-logo">
-                            <img src="assets/img/bulog.png" alt="Perum BULOG Logo" class="logo-light">
-                            <img src="assets/img/BULOG Putih-8 1.png" alt="Perum BULOG Logo" class="logo-dark">
-                        </div>
-                        <div class="exp-info">
-                            <h3 data-i18n="exp-4-role">Multimedia Designer (Magenta BUMN Intern)</h3>
-                            <div class="exp-meta">
-                                <span class="company-name">Perum BULOG</span>
-                                <span class="dot">•</span>
-                                <span class="timeline-date" data-i18n="exp-4-date">Februari 2025 – September 2025</span>
-                                <span class="dot">•</span>
-                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
-                                        data-i18n="exp-4-location">Yogyakarta, Indonesia</span></span>
+                    <!-- Detail 3 -->
+                    <div class="timeline-detail-content" id="detail-exp3">
+                        <div class="detail-split-layout">
+                            <div class="detail-visual-col">
+                                <img src="assets/pt kpi/hero section.png" alt="KPI Project" class="detail-img">
+                                <img src="assets/pt kpi/4.png" alt="KPI Slide" class="detail-img">
+                            </div>
+                            <div class="detail-text-col">
+                                <div class="detail-header">
+                                    <div class="detail-title">
+                                        <h3 class="detail-company">PT Kilang Pertamina Internasional</h3>
+                                        <h4 class="detail-role" data-i18n="exp-3-role">Graphic Designer (Hybrid Contract Worker)</h4>
+                                        <p class="location-text"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp-3-location">Cilacap, Jawa Tengah</span></p>
+                                    </div>
+                                </div>
+                                <ul class="detail-bullets">
+                                    <li data-i18n="exp-3-bullet-1">Penanggung jawab desain 40+ slide presentasi PROPER PT Kilang Pertamina Internasional RU IV Cilacap, bekerja secara hybrid di kantor maupun remote.</li>
+                                    <li data-i18n="exp-3-bullet-2">Menerapkan pendekatan visual data-driven dengan infografis yang menggambarkan dampak pengelolaan limbah, emisi, hingga program CSR perusahaan secara terukur.</li>
+                                    <li data-i18n="exp-3-bullet-3">Mendukung keberhasilan perusahaan meraih predikat <strong>PROPER EMAS</strong> dari Kementerian LHK melalui penyajian visual yang profesional dan strategis.</li>
+                                </ul>
+                                <a href="pages/portfolio-pertamina-internasional.html" class="btn-portfolio" data-i18n="exp-btn-portfolio">Lihat Portofolio <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <div class="exp-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
                     </div>
-                    <div class="exp-details">
-                        <div class="details-inner">
-                            <ul>
-                                <li data-i18n="exp-4-bullet-1">Mendesain 50+ aset visual untuk kampanye digital &
-                                    non-digital sesuai visual guideline perusahaan, mencakup konten media sosial,
-                                    banner, poster, dan motion graphic.</li>
-                                <li data-i18n="exp-4-bullet-2">Memproduksi 2 video motion graphic untuk kampanye
-                                    Instagram Reels: "Beras untuk Generasi Emas" dan "Packaging Baru Setra Ramos" yang
-                                    menargetkan audiens millennial.</li>
-                                <li data-i18n="exp-4-bullet-3">Mengoptimasi desain media cetak (poster SPHP, banner
-                                    beras ramos, poster K3) untuk kebutuhan komunikasi Bagian Marketing Communication
-                                    dan Hubungan Masyarakat.</li>
-                                <li data-i18n="exp-4-bullet-4"><em>Pencapaian: Sertifikat Magenta BUMN dengan Nilai A
-                                        (Sangat Memuaskan).</em></li>
-                            </ul>
-                            <a href="pages/portfolio-bulog.html" class="btn-portfolio"
-                                data-i18n="exp-btn-portfolio">Lihat
-                                Portofolio <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Exp 5 -->
-                <div class="exp-item glass-effect" data-category="visual">
-                    <div class="exp-summary">
-                        <div class="company-logo">
-                            <img src="assets/img/Logo Kemendikbud.png" alt="BSKAP Kemendikbudristek Logo"
-                                class="logo-light">
-                            <img src="assets/img/bskap putih.png" alt="BSKAP Kemendikbudristek Logo" class="logo-dark">
-                        </div>
-                        <div class="exp-info">
-                            <h3 data-i18n="exp-5-role">Graphic Designer & Illustrator (MSIB Batch 7)</h3>
-                            <div class="exp-meta">
-                                <span class="company-name">BSKAP Kemendikbudristek</span>
-                                <span class="dot">•</span>
-                                <span class="timeline-date" data-i18n="exp-5-date">September 2024 – Desember 2024</span>
-                                <span class="dot">•</span>
-                                <span class="location"><i class="fas fa-map-marker-alt"></i> <span
-                                        data-i18n="exp-5-location">Jakarta, Indonesia</span></span>
+                    <!-- Detail 4 -->
+                    <div class="timeline-detail-content" id="detail-exp4">
+                        <div class="detail-split-layout">
+                            <div class="detail-visual-col">
+                                <img src="assets/bulog/sosmed_1_marketing_communication.png" alt="Bulog Marketing Comm" class="detail-img">
+                                <img src="assets/bulog/sosmed_2_public_relation.png" alt="Bulog Public Relation" class="detail-img">
+                            </div>
+                            <div class="detail-text-col">
+                                <div class="detail-header">
+                                    <div class="detail-title">
+                                        <h3 class="detail-company">Perum BULOG</h3>
+                                        <h4 class="detail-role" data-i18n="exp-4-role">Multimedia Designer (Magenta BUMN Intern)</h4>
+                                        <p class="location-text"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp-4-location">Yogyakarta, Indonesia</span></p>
+                                    </div>
+                                </div>
+                                <ul class="detail-bullets">
+                                    <li data-i18n="exp-4-bullet-1">Mendesain 50+ aset visual untuk kampanye digital & non-digital sesuai visual guideline perusahaan, mencakup konten media sosial, banner, poster, dan motion graphic.</li>
+                                    <li data-i18n="exp-4-bullet-2">Memproduksi 2 video motion graphic untuk kampanye Instagram Reels: "Beras untuk Generasi Emas" dan "Packaging Baru Setra Ramos" yang menargetkan audiens millennial.</li>
+                                    <li data-i18n="exp-4-bullet-3">Mengoptimasi desain media cetak (poster SPHP, banner beras ramos, poster K3) untuk kebutuhan komunikasi Bagian Marketing Communication dan Hubungan Masyarakat.</li>
+                                    <li data-i18n="exp-4-bullet-4"><em>Pencapaian: Sertifikat Magenta BUMN dengan Nilai A (Sangat Memuaskan).</em></li>
+                                </ul>
+                                <a href="pages/portfolio-bulog.html" class="btn-portfolio" data-i18n="exp-btn-portfolio">Lihat Portofolio <i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <div class="exp-toggle">
-                            <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Detail 5 -->
+                    <div class="timeline-detail-content" id="detail-exp5">
+                        <div class="detail-split-layout">
+                            <div class="detail-visual-col">
+                                <img src="assets/bskap/komik 1.png" alt="BSKAP Komik Project" class="detail-img">
+                                <img src="assets/bskap/sosmed 1.png" alt="BSKAP Social Media" class="detail-img">
+                            </div>
+                            <div class="detail-text-col">
+                                <div class="detail-header">
+                                    <div class="detail-title">
+                                        <h3 class="detail-company">BSKAP Kemendikbudristek</h3>
+                                        <h4 class="detail-role" data-i18n="exp-5-role">Graphic Designer & Illustrator (MSIB Batch 7)</h4>
+                                        <p class="location-text"><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp-5-location">Jakarta, Indonesia</span></p>
+                                    </div>
+                                </div>
+                                <ul class="detail-bullets">
+                                    <li data-i18n="exp-5-bullet-1">Mendesain sistem identitas visual berupa maskot & branding elements untuk Program Nasional Pusat Perbukuan, dan <strong>meraih Juara 1</strong> dalam kompetisi Desain Maskot & Branding BSKAP 2024.</li>
+                                    <li data-i18n="exp-5-bullet-2">Mendesain Buku Pedoman ZI-WBK | WBBM BSKAP 2024 (60+ halaman) dengan tata letak yang informatif dan konsisten dengan identitas lembaga.</li>
+                                    <li data-i18n="exp-5-bullet-3">Membuat ilustrasi Buku Non-Teks Komik Jenjang E untuk Kampanye Anti-Bullying, menerjemahkan pesan edukasi ke dalam visual yang menarik bagi pembaca anak.</li>
+                                    <li data-i18n="exp-5-bullet-4">Berkolaborasi dengan divisi humas dalam perancangan aset konten media sosial resmi BSKAP Kemendikbudristek.</li>
+                                </ul>
+                                <a href="pages/portfolio-bskap.html" class="btn-portfolio" data-i18n="exp-btn-portfolio">Lihat Portofolio <i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="exp-details">
-                        <div class="details-inner">
-                            <ul>
-                                <li data-i18n="exp-5-bullet-1">Mendesain sistem identitas visual berupa maskot &
-                                    branding elements untuk Program Nasional Pusat Perbukuan, dan <strong>meraih Juara
-                                        1</strong> dalam kompetisi Desain Maskot & Branding BSKAP 2024.</li>
-                                <li data-i18n="exp-5-bullet-2">Mendesain Buku Pedoman ZI-WBK | WBBM BSKAP 2024 (60+
-                                    halaman) dengan tata letak yang informatif dan konsisten dengan identitas lembaga.
-                                </li>
-                                <li data-i18n="exp-5-bullet-3">Membuat ilustrasi Buku Non-Teks Komik Jenjang E untuk
-                                    Kampanye Anti-Bullying, menerjemahkan pesan edukasi ke dalam visual yang menarik
-                                    bagi pembaca anak.</li>
-                                <li data-i18n="exp-5-bullet-4">Berkolaborasi dengan divisi humas dalam perancangan aset
-                                    konten media sosial resmi BSKAP Kemendikbudristek.</li>
-                            </ul>
-                            <a href="pages/portfolio-bskap.html" class="btn-portfolio"
-                                data-i18n="exp-btn-portfolio">Lihat
-                                Portofolio <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
