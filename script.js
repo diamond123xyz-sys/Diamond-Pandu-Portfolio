@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Contextual Personalization (Deteksi Parameter URL)
     const urlParams = new URLSearchParams(window.location.search);
     const guestRole = urlParams.get('role');
-    
+
     let skillsList = ["Graphic Design", "Brand Identity", "Visual Direction"];
-    
+
     if (guestRole === 'frontend') {
         skillsList = ["Graphic Design", "UI/UX Design", "Front-End Development", "Digital Transformation"];
     } else if (guestRole === 'uiux') {
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('ag-progress-fill');
     const logText = document.getElementById('ag-log-text');
     const loaderScreen = document.getElementById('ag-loader-screen');
-    
-    if(loaderScreen && typoDisplay && percentageText && progressBar && logText) {
+
+    if (loaderScreen && typoDisplay && percentageText && progressBar && logText) {
         const logs = [
             "Antigravity Agent: Mapping layout structures...",
             "Antigravity Agent: Compiling visual identity assets...",
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     targetProgress = Math.floor((loadedImages / totalImages) * 100);
                 });
                 img.addEventListener('error', () => {
-                    loadedImages++; 
+                    loadedImages++;
                     targetProgress = Math.floor((loadedImages / totalImages) * 100);
                 });
             }
@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentProgress < targetProgress) {
                 currentProgress += 2;
             }
-            
+
             // Allow artificial loading even if targetProgress is lagging behind
-            if(currentProgress < 95 && currentProgress >= targetProgress && !forcedComplete) {
-                 currentProgress += Math.random() > 0.4 ? 1 : 0; 
+            if (currentProgress < 95 && currentProgress >= targetProgress && !forcedComplete) {
+                currentProgress += Math.random() > 0.4 ? 1 : 0;
             }
 
             if (currentProgress > 100) currentProgress = 100;
@@ -95,18 +95,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentProgress === 100) {
                 clearInterval(lerpProgress);
                 logText.innerText = "All systems go. Transitioning UX...";
-                
+
                 let uri = '';
                 if (guestRole === 'frontend') uri = 'pages/portfolio-vinix.html';
                 else uri = 'pages/portfolio-bulog.html';
 
-                if(uri && document.body.contains(loaderScreen)) {
-                   const link = document.createElement('link');
-                   link.rel = 'prefetch';
-                   link.href = uri;
-                   document.head.appendChild(link);
+                if (uri && document.body.contains(loaderScreen)) {
+                    const link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = uri;
+                    document.head.appendChild(link);
                 }
-                
+
                 setTimeout(() => {
                     loaderScreen.classList.add('loaded');
                     document.body.style.overflowY = "visible";
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetDetail) {
                 targetDetail.classList.add('active');
             }
-            
+
             // Scroll detail into view elegantly on mobile
             if (window.innerWidth <= 768) {
                 document.querySelector('.timeline-details-display').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Language Redirections for subpages
         const pathSegments = window.location.pathname.split('/');
         const pageName = pathSegments[pathSegments.length - 1];
-        
+
         const redirects = {
             'id': {
                 'portfolio-vinix-en.html': 'portfolio-vinix.html',
