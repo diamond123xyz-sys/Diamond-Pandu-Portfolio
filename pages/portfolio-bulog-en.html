@@ -84,7 +84,7 @@
         .css-carousel::-webkit-scrollbar { display: none; }
         .css-carousel-item { flex: 0 0 100%; scroll-snap-align: start; border-radius: 16px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); }
         .css-carousel-item:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border-color: var(--accent-primary); }
-        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; max-height: 85vh; margin: 0 auto; }
+        .css-carousel-item img { width: 100%; height: auto; display: block; object-fit: contain; margin: 0 auto; }
         @media (max-width: 768px) { .css-carousel-item { flex: 0 0 calc(100% - 2rem); scroll-snap-align: center; } }
     </style>
 </head>
@@ -157,16 +157,12 @@
                 <div class="project-categories">
                     <div class="category-section">
                         <h3>Social Media — Marketing Communication</h3>
-                        <div class="carousel-wrapper" style="margin-bottom: 0;">
-                            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                            <div class="css-carousel">
-                                <div class="css-carousel-item" style="border: none; background: transparent; box-shadow: none; padding: 0; min-height: 200px;">
-                                    <div class="media-item natural" style="border: none; background: transparent; box-shadow: none; width: 100%;">
-                                        <img src="../assets/bulog/sosmed_1_marketing_communication.png" alt="Social Media Campaign Marketing Communication" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-                                    </div>
-                                </div>
-                                <div class="css-carousel-item" style="border: none; background: transparent; box-shadow: none; padding: 0;">
-                                    <div class="marquee-gallery-wrapper">
+                        <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 2rem;">
+                            <div class="media-item natural" style="border: none; background: transparent; box-shadow: none; width: 100%;">
+                                <img src="../assets/bulog/sosmed_1_marketing_communication.png" alt="Social Media Campaign Marketing Communication" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                            </div>
+                        </div>
+                        <div class="marquee-gallery-wrapper" style="padding-top: 1rem;">
                                         <div class="marquee-row">
                                             <div class="marquee-item"><img src="../assets/bulog/marcomm_slide2_1.webp" alt="Marcomm Social Media 1"></div>
                                             <div class="marquee-item"><img src="../assets/bulog/marcomm_slide2_2.webp" alt="Marcomm Social Media 2"></div>
@@ -210,9 +206,6 @@
                                             <div class="marquee-item"><img src="../assets/bulog/marcomm_slide2_18.webp" alt="Marcomm Social Media 18"></div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
 
